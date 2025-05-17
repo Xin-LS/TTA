@@ -9,5 +9,5 @@ Class distribution plays an important role in learning deep classifiers. When th
 We validate our method on two important medical image classification tasks including **liver fibrosis staging** and **COVID-19 severity prediction**. Our experiments clearly show the decreased model performance under label shift. With our method, model performance significantly improves on all the test datasets with different label shifts for both medical image diagnosis tasks.  
 🔗 **Code**: [https://github.com/med-air/TTADC](https://github.com/med-air/TTADC)
 <br>
-<img src="images/TTPA/TTADC.png" alt="TTADC Overview" width="600"/>
+<img src="images/TTPA/TTADC.png" alt="TTADC Overview">
 </details>
