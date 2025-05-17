@@ -1,14 +1,14 @@
-# Awesome Test-Time Adaptation [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome Test-Time Adaptation 
 
-A curated list of awesome test-time (**<u>domain/ batch/ instance/ online/ prior</u>**) adaptation resources. Your contributions are always welcome!
+A curated list of test-time (**<u>domain/ batch/ instance/ online/ prior</u>**) adaptation resources. 
 
 
 ## Contents
 - [Test-Time (Source-Free) Domain Adaptation (SFDA)](./TTA-SFDA.md)
 
-- [Test-Time Batch Adaptation (TTBA)](./TTA-TTBA.md/#Batch-level)
+- [Test-Time Batch Adaptation (TTBA)](./TTA-TTBA.md/)
 
-- [Test-Time Instance Adaptation (TTIA)](./TTA-TTBA.md/#Instance-level)
+- [Test-Time Instance Adaptation (TTIA)](./TTA-TTIA.md/)
 
 - [Online Test-Time Adaptation (OTTA)](./TTA-OTTA.md)
 
