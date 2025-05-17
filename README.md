@@ -1,6 +1,15 @@
-# Test-Time Adaptation
-测试时预适应
+# Awesome Test-Time Adaptation [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-## Awesome Test-Time Prior Adaptation
+A curated list of awesome test-time (**<u>domain/ batch/ instance/ online/ prior</u>**) adaptation resources. Your contributions are always welcome!
 
-- `TTADC` [Ma et al., Proc. MICCAI 2022] **Test-time adaptation with calibration of medical image classification nets for label distribution shift** [[PDF]](https://arxiv.org/abs/2207.00769) [[G-Scholar]](https://scholar.google.com/scholar?cluster=7982883573733677737&hl=en) [[CODE]](https://github.com/med-air/TTADC)
+
+## Contents
+- [Test-Time (Source-Free) Domain Adaptation (SFDA)](./TTA-SFDA.md)
+
+- [Test-Time Batch Adaptation (TTBA)](./TTA-TTBA.md/#Batch-level)
+
+- [Test-Time Instance Adaptation (TTIA)](./TTA-TTBA.md/#Instance-level)
+
+- [Online Test-Time Adaptation (OTTA)](./TTA-OTTA.md)
+
+- [Test-Time Prior Adaptation (TTPA)](./TTA-TTPA.md)
