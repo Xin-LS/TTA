@@ -2,7 +2,7 @@
 
 ## - `TTADC` [Ma et al., Proc. MICCAI 2022] **Test-time adaptation with calibration of medical image classification nets for label distribution shift** [[PDF]](https://arxiv.org/abs/2207.00769) [[G-Scholar]](https://scholar.google.com/scholar?cluster=7982883573733677737&hl=en) [[CODE]](https://github.com/med-air/TTADC)
 <details open>
-<summary><strong>📌 Abstract, Contributions, Datasets & Visualization</strong></summary>
+<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
 <h3>🧠 <strong>Abstract</strong></h3>
 <p>
@@ -35,4 +35,35 @@ For the COVID-19 severity prediction task, we use the public chest CT dataset iC
 </p>
 </details>
 
+## - `TTLSA` [Sun et al., Proc. NeurIPS 2023] **Beyond invariance: Test-time label-shift adaptation for distributions with" spurious" correlations** [[PDF]](https://arxiv.org/abs/2211.15646) [[G-Scholar]](https://scholar.google.com/scholar?cluster=8297779371205142813&hl=en) [[CODE]](https://github.com/nalzok/test-time-label-shift)
+<details open>
+<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
+<br>
+<h3>🧠 <strong>Abstract</strong></h3><p>
+Changes in the data distribution at test time can have deleterious effects on the performance of predictive models p(y|x). We consider situations where there are additional meta-data labels (such as group labels), denoted by z, that can account for such changes in the distribution.
+</p><p>
+In particular, we assume that the prior distribution p(y, z), which models the dependence between the class label y and the “nuisance” factors z, may change across domains, either due to a change in the correlation between these terms, or a change in one of their marginals. However, we assume that the generative model for features p(x|y, z) is invariant across domains. We note that this corresponds to an expanded version of the widely used “label shift” assumption, where the labels now also include the nuisance factors z.
+</p><p>
+Based on this observation, we propose a test-time label shift correction that adapts to changes in the joint distribution p(y, z) using EM applied to unlabeled samples from the target domain distribution, pt(x). Importantly, we are able to avoid fitting a generative model p(x|y, z), and merely need to reweight the outputs of a discriminative model ps(y, z|x) trained on the source distribution.
+</p><p>
+We evaluate our method, which we call <strong>“Test-Time Label-Shift Adaptation” (TTLSA)</strong>, on several standard image and text datasets, as well as the CheXpert chest X-ray dataset, and show that it improves performance over methods that target invariance to changes in the distribution, as well as baseline empirical risk minimization methods.
+</p><p>
+🔗 <strong>Code</strong>: <a href="https://github.com/nalzok/test-time-label-shift" target="_blank">https://github.com/nalzok/test-time-label-shift</a>
+</p>
+<br>
+<h3>🎯 <strong>Contributions</strong></h3>
+<p>
+"Motivated by the above, in this paper we propose a test-time approach for optimally adapting to distribution shifts which arise due to changes in the underlying joint prior between the class labels y and the nuisance labels z. We can view these changes as due to a hidden common cause u, such as the location of a specific hospital. Thus we assume ps(u)̸ = pt(u), where ps is the source distribution, and pt is the target distribution. Consequently, pi(y, z) = ∑ u p(y, z|u)pi(u) will change across domains i. However, we assume that the generative model of the features is invariant across domains, so pi(x | y, z) = p(x | y, z). See Figure 1 for an illustration of our modeling assumptions. The key observation behind our method is that our assumptions are equivalent to the standard 'label shift assumption', except it is defined with respect to an expanded label m = (y, z), which we call the meta-label. We call this the 'expanded label shift assumption'. This lets use existing label shift techniques, such as Alexandari et al. [2020], Lipton et al. [2018], Garg et al. [2020], to adapt our model using a small sample of unlabeled data {xn ∼ pt(x)} from the target domain to adjust for the shift in the prior over meta-labels, as we discuss in Section 3.2. Importantly, although our approach relies on the assumption that p(x | y, z) is preserved across distribution shifts, it is based on learning a discriminative base model ps(y, z, | x), which we adjust to the target distribution pt(y | x), as we explain in Section 3.1. Thus we do not need to fit a generative model to the data. We do need access to labeled examples of the confounding factor z at training time, but such data is often collected anyway (albeit in limited quantities) especially for protected attributes. Additionally, because it operates at test-time, our method does not require retraining to adapt the base model to multiple target domains. We therefore call our approach Test-Time Label Shift Adaptation (TTLSA)"
+</p>
+<br>
+<h3>📂 <strong>Datasets</strong></h3>
+<p>
+The CheXpert dataset contains 224,316 chest X-rays from 65,240 patients, annotated with 14 disease labels and three attributes (age, sex, race). Labels and attributes are binarized: diseases are classified as "negative" (0) or "positive" (1), age is split by median (0 for below, 1 above), and sex is encoded as female (0) or male (1). Uncertain labels are excluded. The dataset is commonly used to predict Pleural Effusion (class label *y*), with sex as the confounding variable (*z*). Input features (*x*) include either raw 224×224 grayscale images or 1376-dimensional embeddings from a pretrained CXR model (trained on separate U.S. and Indian X-ray data). This setup enables studies on disease prediction while addressing potential biases from demographic confounders.
+</p>
+<br>
+<h3>🖼️ <strong>Method Overview</strong></h3>
+<p align="center">
+  <img src="images/TTPA/TTADC.png" >
+</p>
+</details>
 
