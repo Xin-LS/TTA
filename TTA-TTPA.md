@@ -4,11 +4,9 @@
 <details open>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
-<h3>🧠 <strong>Abstract</strong></h3>
-<p>
+<h3>🧠 <strong>Abstract</strong></h3><p>
 Class distribution plays an important role in learning deep classifiers. When the proportion of each class in the test set differs from the training set, the performance of classification nets usually degrades. Such a label distribution shift problem is common in medical diagnosis since the prevalence of disease varies over location and time.  
-</p>
-<p>
+</p><p>
 In this paper, we propose the first method to tackle label shift for medical image classification, which effectively adapts the model learned from a single training label distribution to arbitrary unknown test label distribution. Our approach innovates <strong>distribution calibration</strong> to learn multiple representative classifiers, which are capable of handling different one-dominating-class distributions. When given a test image, the diverse classifiers are dynamically aggregated via the <strong>consistency-driven test-time adaptation</strong>, to deal with the unknown test label distribution.  
 </p>
 <p>
@@ -19,19 +17,16 @@ We validate our method on two important medical image classification tasks inclu
 <h3>🎯 <strong>Contributions</strong></h3>
 <p>
 In this paper, to our best knowledge, we present the first work to effectively tackle the label distribution shift in medical image classification. Our method learns representative classifiers with distribution calibration, by extending the concept of balanced softmax loss [24,34] to simulate multiple distributions that one class dominates other classes. Compared with [34], our method can be more flexible and be more targeted for ordinal classification, as our one-dominating-class distributions can represent more diverse label distributions and we use ordinal encoding instead of one-hot encoding to train the model. Then, at model deployment to new test data, we dynamically combine the representative classifiers by adapting their outputs to the label distribution of test data. The test-time adaptation is driven by a consistency regularization loss to adjust the weights of different classifier. We evaluate our method on two important medical applications of liver fibrosis staging and COVID-19 severity prediction. With our proposed method, the label shift can be largely mitigated with consistent performance improvement.
-</p>
-<br>
+</p><br>
 <h3>📂 <strong>Datasets</strong></h3>
 <p>
 For the liver fibrosis staging task, we use an in-house abdominal CT dataset collected from three centers with varying label distributions, including 823 cases from our center, 99 from external center A, and 50 from external center B. The ground truths are obtained from liver biopsy pathology results. The disease is categorized into five stages: F0 (no fibrosis), F1 (portal fibrosis without septa), F2 (with few septa), F3 (numerous septa without cirrhosis), and F4 (cirrhosis). Liver regions were segmented using an existing clinical tool and used as the classification region of interest. The CT slices have a thickness of 5 mm and an in-plane resolution of 512 × 512.
-</p>
-<p>
+</p><p>
 For the COVID-19 severity prediction task, we use the public chest CT dataset iCTCF [17], which contains 969 training cases from HUST-Union Hospital and 370 test cases from HUST-Liyuan Hospital. The severity of COVID-19 is divided into six levels: S0 (control), S1 (suspected), S2 (mild), S3 (regular), S4 (severe), and S5 (critical). The preprocessing and lung segmentation steps follow the same procedure as a recent study [2].
-</p>
-<br>
+</p><br>
 <h3>🖼️ <strong>Method Overview</strong></h3>
 <p align="center">
-  <img src="images/TTPA/TTADC.png" alt="TTADC Overview" width="80%">
+  <img src="images/TTPA/TTADC.png">
 </p>
 </details>
 
@@ -49,21 +44,31 @@ Based on this observation, we propose a test-time label shift correction that ad
 We evaluate our method, which we call <strong>“Test-Time Label-Shift Adaptation” (TTLSA)</strong>, on several standard image and text datasets, as well as the CheXpert chest X-ray dataset, and show that it improves performance over methods that target invariance to changes in the distribution, as well as baseline empirical risk minimization methods.
 </p><p>
 🔗 <strong>Code</strong>: <a href="https://github.com/nalzok/test-time-label-shift" target="_blank">https://github.com/nalzok/test-time-label-shift</a>
-</p>
-<br>
+</p><br>
 <h3>🎯 <strong>Contributions</strong></h3>
 <p>
 "Motivated by the above, in this paper we propose a test-time approach for optimally adapting to distribution shifts which arise due to changes in the underlying joint prior between the class labels y and the nuisance labels z. We can view these changes as due to a hidden common cause u, such as the location of a specific hospital. Thus we assume ps(u)̸ = pt(u), where ps is the source distribution, and pt is the target distribution. Consequently, pi(y, z) = ∑ u p(y, z|u)pi(u) will change across domains i. However, we assume that the generative model of the features is invariant across domains, so pi(x | y, z) = p(x | y, z). See Figure 1 for an illustration of our modeling assumptions. The key observation behind our method is that our assumptions are equivalent to the standard 'label shift assumption', except it is defined with respect to an expanded label m = (y, z), which we call the meta-label. We call this the 'expanded label shift assumption'. This lets use existing label shift techniques, such as Alexandari et al. [2020], Lipton et al. [2018], Garg et al. [2020], to adapt our model using a small sample of unlabeled data {xn ∼ pt(x)} from the target domain to adjust for the shift in the prior over meta-labels, as we discuss in Section 3.2. Importantly, although our approach relies on the assumption that p(x | y, z) is preserved across distribution shifts, it is based on learning a discriminative base model ps(y, z, | x), which we adjust to the target distribution pt(y | x), as we explain in Section 3.1. Thus we do not need to fit a generative model to the data. We do need access to labeled examples of the confounding factor z at training time, but such data is often collected anyway (albeit in limited quantities) especially for protected attributes. Additionally, because it operates at test-time, our method does not require retraining to adapt the base model to multiple target domains. We therefore call our approach Test-Time Label Shift Adaptation (TTLSA)"
-</p>
-<br>
+</p><br>
 <h3>📂 <strong>Datasets</strong></h3>
 <p>
 The CheXpert dataset contains 224,316 chest X-rays from 65,240 patients, annotated with 14 disease labels and three attributes (age, sex, race). Labels and attributes are binarized: diseases are classified as "negative" (0) or "positive" (1), age is split by median (0 for below, 1 above), and sex is encoded as female (0) or male (1). Uncertain labels are excluded. The dataset is commonly used to predict Pleural Effusion (class label *y*), with sex as the confounding variable (*z*). Input features (*x*) include either raw 224×224 grayscale images or 1376-dimensional embeddings from a pretrained CXR model (trained on separate U.S. and Indian X-ray data). This setup enables studies on disease prediction while addressing potential biases from demographic confounders.
-</p>
-<br>
+</p><br>
 <h3>🖼️ <strong>Method Overview</strong></h3>
 <p align="center">
   <img src="images/TTPA/TTLSA.png" >
 </p>
 </details>
+
+## - `SADE` [Zhang et al., Proc. NeurIPS 2022] **Self-supervised aggregation of diverse experts for test-agnostic long-tailed recognition** [[PDF]](https://openreview.net/forum?id=m7CmxlpHTiu) [[G-Scholar]](https://scholar.google.com/scholar?cluster=16295847624184830192&hl=en) [[CODE]](https://github.com/vanint/sade-agnosticlt)
+<details open>
+<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
+<br>
+<h3>🧠 <strong>Abstract</strong></h3><p>
+Existing long-tailed recognition methods, aiming to train class-balanced models from long-tailed data, generally assume the models would be evaluated on the uniform test class distribution. However, practical test class distributions often violate this assumption (e.g., being either long-tailed or even inversely long-tailed), which may lead existing methods to fail in real applications. In this paper, we study a more practical yet challenging task, called test-agnostic long-tailed recognition, where the training class distribution is long-tailed while the test class distribution is agnostic and not necessarily uniform. In addition to the issue of class imbalance, this task poses another challenge: the class distribution shift between the training and test data is unknown. To tackle this task, we propose a novel approach, called Self-supervised Aggregation of Diverse Experts, which consists of two strategies: (i) a new skill-diverse expert learning strategy that trains multiple experts from a single and stationary long-tailed dataset to separately handle different class distributions; (ii) a novel test-time expert aggregation strategy that leverages self-supervision to aggregate the learned multiple experts for handling unknown test class distributions. We theoretically show that our self-supervised strategy has a provable ability to simulate test-agnostic class distributions. Promising empirical results demonstrate the effectiveness of our method on both vanilla and test-agnostic long-tailed recognition. The source code is available at https://github.com/Vanint/SADE-AgnosticLT.
+</p><br>
+<h3>🖼️ <strong>Method Overview</strong></h3>
+<p><img src="images/TTPA/SADE.png" >
+</p>
+</details>
+
 
