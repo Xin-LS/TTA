@@ -63,7 +63,7 @@ The CheXpert dataset contains 224,316 chest X-rays from 65,240 patients, annotat
 <br>
 <h3>🖼️ <strong>Method Overview</strong></h3>
 <p align="center">
-  <img src="images/TTPA/TTADC.png" >
+  <img src="images/TTPA/TTLSA.png" >
 </p>
 </details>
 
