@@ -1,6 +1,7 @@
 # Test-Time Prior Adaptation
 
-A curated list of recent methods for handling label distribution shift at test time. Click “📄”, “🔍” or “💻” to access the PDF, Google Scholar entry, or code repo.
+**Test-Time Prior Adaptation **(TTPA) is a class of methods addressing the label shift problem, where the class distribution during model training often differs from that during testing. Traditional algorithms typically fail to accurately calibrate predicted probabilities or confidence scores in such scenarios. <p>
+This collection features representative papers from recent years in this field, spanning diverse applications such as medical image classification, long-tailed recognition, and federated learning.
 
 ---
 
@@ -96,7 +97,7 @@ The CheXpert dataset contains 224,316 chest X-rays from 65,240 patients, annotat
 
 ### `FedCal` [Xu & Huang, **CIKM 2023**]  
 **A joint training-calibration framework for test-time personalization with label shift in federated learning**  
-[📄 PDF](https://dl.acm.org/doi/abs/10.1145/3583780.3615173) · 🔍 G-Scholar·· (pending) · 💻 CODE·· (pending)
+[📄 PDF](https://dl.acm.org/doi/abs/10.1145/3583780.3615173) 
 
 <details>
 <summary>📌 Abstract · Contributions · Method Overview</summary>
@@ -196,7 +197,7 @@ Long-tail learning primarily focuses on mitigating the label distribution shift 
 
 ### `Wav-O/R` [Qian et al., **ICML 2024**]  
 **Efficient non-stationary online learning by wavelets with applications to online distribution shift adaptation**  
-[📄 PDF](https://openreview.net/forum?id=KNedb3bQ4h) · [🔍 G-Scholar··]() · 💻 CODE··()
+[📄 PDF](https://openreview.net/forum?id=KNedb3bQ4h) 
 
 <details>
 <summary>📌 Abstract · Contributions · Method Overview</summary>
@@ -219,7 +220,7 @@ Dynamic regret minimization offers a principled way for non-stationary online le
 
 ### `CPMCN` [Wen et al., **ICLR 2024**]  
 **Class probability matching with calibrated networks for label shift adaption**  
-[📄 PDF](https://openreview.net/forum?id=mliQ2huFrZ) · 🔍 G-Scholar··() · 💻 CODE··()
+[📄 PDF](https://openreview.net/forum?id=mliQ2huFrZ)
 
 <details>
 <summary>📌 Abstract · Contributions · Method Overview</summary>
