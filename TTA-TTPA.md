@@ -1,7 +1,7 @@
 # Test-Time Prior Adaptation 
 
 ### - `TTADC` [Ma et al., Proc. MICCAI 2022] **Test-time adaptation with calibration of medical image classification nets for label distribution shift** [[PDF]](https://arxiv.org/abs/2207.00769) [[G-Scholar]](https://scholar.google.com/scholar?cluster=7982883573733677737&hl=en) [[CODE]](https://github.com/med-air/TTADC)
-<details open>
+<details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
 <h3>🧠 <strong>Abstract</strong></h3><p>
@@ -31,7 +31,7 @@ For the COVID-19 severity prediction task, we use the public chest CT dataset iC
 </details>
 
 ### - `TTLSA` [Sun et al., Proc. NeurIPS 2023] **Beyond invariance: Test-time label-shift adaptation for distributions with" spurious" correlations** [[PDF]](https://arxiv.org/abs/2211.15646) [[G-Scholar]](https://scholar.google.com/scholar?cluster=8297779371205142813&hl=en) [[CODE]](https://github.com/nalzok/test-time-label-shift)
-<details open>
+<details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
 <h3>🧠 <strong>Abstract</strong></h3><p>
@@ -60,7 +60,7 @@ The CheXpert dataset contains 224,316 chest X-rays from 65,240 patients, annotat
 </details>
 
 ### - `SADE` [Zhang et al., Proc. NeurIPS 2022] **Self-supervised aggregation of diverse experts for test-agnostic long-tailed recognition** [[PDF]](https://openreview.net/forum?id=m7CmxlpHTiu) [[G-Scholar]](https://scholar.google.com/scholar?cluster=16295847624184830192&hl=en) [[CODE]](https://github.com/vanint/sade-agnosticlt)
-<details open>
+<details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
 <h3>🧠 <strong>Abstract</strong></h3><p>
@@ -73,7 +73,7 @@ Existing long-tailed recognition methods, aiming to train class-balanced models 
 
 
 ### - - `...` [Park et al., Proc. ICCV 2023] **Label shift adapter for test-time adaptation under covariate and label shifts** [[PDF]](https://arxiv.org/abs/2308.08810) [[G-Scholar]](https://scholar.google.com/scholar?cluster=6476921383522013928&hl=en)
-<details open>
+<details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
 <h3>🧠 <strong>Abstract</strong></h3>
@@ -94,7 +94,7 @@ Test-time adaptation (TTA) aims to adapt a pre-trained model to the target domai
 </details>
 
 ### - `DROPS` [Wei et al., Proc. ICLR 2023] **Distributionally robust post-hoc classifiers under prior shifts** [[PDF]](https://arxiv.org/abs/2309.08825) [[G-Scholar]](https://scholar.google.com/scholar?cluster=10995720941474911018&hl=en) [[CODE]](https://github.com/weijiaheng/Drops)
-  <details open>
+  <details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
 <h3>🧠 <strong>Abstract</strong></h3>
@@ -105,7 +105,7 @@ The generalization ability of machine learning models degrades significantly whe
 </details>
 
 ### -  `...` [Wei et al., Proc. ICML 2024] **Learning label shift correction for test-agnostic long-tailed recognition** [[PDF]](https://openreview.net/forum?id=J3xYTh6xtL) [[G-Scholar]](https://scholar.google.com/scholar?cluster=13080086498775196290&hl=en) [[CODE]](https://github.com/Stomach-ache/label-shift-correction)
-<details open>
+<details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
 <h3>🧠 <strong>Abstract</strong></h3>
@@ -123,7 +123,7 @@ Long-tail learning primarily focuses on mitigating the label distribution shift 
 </details>
 
 ### - `Wav-O/-R` [Qian et al., Proc. ICML 2024] **Efficient non-stationary online learning by wavelets with applications to online distribution shift adaptation** [[PDF]](https://openreview.net/forum?id=KNedb3bQ4h) [[G-Scholar--]]()
-<details open>
+<details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
 <h3>🧠 <strong>Abstract</strong></h3>
@@ -138,7 +138,7 @@ Dynamic regret minimization offers a principled way for non-stationary online le
 </details>
 
 ### - `CPMCN` [Wen et al., Proc. ICLR 2024] **Class probability matching with calibrated networks for label shift adaption** [[PDF]](https://openreview.net/forum?id=mliQ2huFrZ) [[G-Scholar--]]()
-<details open>
+<details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
 <h3>🧠 <strong>Abstract</strong></h3>
