@@ -71,6 +71,29 @@ Existing long-tailed recognition methods, aiming to train class-balanced models 
 </p>
 </details>
 
+### - `FedCal` [Xu and Huang, Proc. CIKM 2023] **A joint training-calibration framework for test-time personalization with label shift in federated learning** [[PDF]](https://dl.acm.org/doi/abs/10.1145/3583780.3615173) [[G-Scholar--]]()
+<details>
+<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
+<br>
+<h3>🧠 <strong>Abstract</strong></h3>
+<p>
+In domain adaptation, covariate shift and label shift problems are two distinct and complementary tasks. In covariate shift adaptation where the differences in data distribution arise from variations in feature probabilities, existing approaches naturally address this problem based on feature probability matching (FPM). However, for label shift adaptation where the differences in data distribution stem solely from variations in class probability, current methods still use FPM on the d-dimensional feature space to estimate the class probability ratio on the one-dimensional label space.
+To address label shift adaptation more naturally and effectively, inspired by a new representation of the source domain’s class probability, we propose a new framework called class probability matching (CPM) which matches two class probability functions on the one-dimensional label space to estimate the class probability ratio, fundamentally different from FPM operating on the d-dimensional feature space. Furthermore, by incorporating the kernel logistic regression into the CPM framework to estimate the conditional probability, we propose an algorithm called class probability matching using kernel methods (CPMKM) for label shift adaptation.
+From the theoretical perspective, we establish the optimal convergence rates of CPMKM with respect to the cross-entropy loss for multi-class label shift adaptation. From the experimental perspective, comparisons on real datasets demonstrate that CPMKM outperforms existing FPM-based and maximum-likelihood-based algorithms.
+</p>
+<br>
+<h3>🎯 <strong>Contributions</strong></h3>
+<p>
+(i) Starting from a representation of the class probability p(y), we construct the new matching framework CPM for estimating the class probability ratio q(y)/p(y), which avoids potential issues associated with FPM methods. More specifically, we use the law of total probability and the feature probability ratio p(x)/q(x) to derive a new representation of p(y) that leads to CPM, which directly matches distributions in the label space rather than in the feature space.
+(ii) We incorporate kernel logistic regression (KLR) into the CPM framework and propose the CPMKM algorithm. Theoretically, we provide optimal convergence rates for CPMKM w.r.t. the cross-entropy loss, including a new oracle inequality for truncated KLR to handle the unboundedness of CE loss.
+
+(iii) Through experiments on real datasets under various label shift scenarios, CPMKM outperforms FPM-based and EM-based methods in both class probability estimation and target classification. Notably, performance improves as the target sample size increases and stabilizes thereafter, validating the theoretical convergence.
+</p><br>
+<h3>🖼️ <strong>Method Overview</strong></h3>
+<p><img src="C.png" >
+</p>
+</details>
+
 
 ### - - `...` [Park et al., Proc. ICCV 2023] **Label shift adapter for test-time adaptation under covariate and label shifts** [[PDF]](https://arxiv.org/abs/2308.08810) [[G-Scholar]](https://scholar.google.com/scholar?cluster=6476921383522013928&hl=en)
 <details>
