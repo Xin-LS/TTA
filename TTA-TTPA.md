@@ -85,7 +85,7 @@ From the theoretical perspective, we establish the optimal convergence rates of 
 <br>
 <h3>🎯 <strong>Contributions</strong></h3>
 <p>
-(i) Starting from a representation of the class probability p(y), we construct the new matching framework CPM for estimating the class probability ratio q(y)/p(y), which avoids potential issues associated with FPM methods. More specifically, we use the law of total probability and the feature probability ratio p(x)/q(x) to derive a new representation of p(y) that leads to CPM, which directly matches distributions in the label space rather than in the feature space.
+(i) Starting from a representation of the class probability p(y), we construct the new matching framework CPM for estimating the class probability ratio q(y)/p(y), which avoids potential issues associated with FPM methods. More specifically, we use the law of total probability and the feature probability ratio p(x)/q(x) to derive a new representation of p(y) that leads to CPM, which directly matches distributions in the label space rather than in the feature space.  
 (ii) We incorporate kernel logistic regression (KLR) into the CPM framework and propose the CPMKM algorithm. Theoretically, we provide optimal convergence rates for CPMKM w.r.t. the cross-entropy loss, including a new oracle inequality for truncated KLR to handle the unboundedness of CE loss.
 
 (iii) Through experiments on real datasets under various label shift scenarios, CPMKM outperforms FPM-based and EM-based methods in both class probability estimation and target classification. Notably, performance improves as the target sample size increases and stabilizes thereafter, validating the theoretical convergence.
