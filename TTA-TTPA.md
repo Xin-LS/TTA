@@ -158,7 +158,7 @@ We consider the domain adaptation problem in the context of label shift, where t
 </details>
 
 ### - `OLS-OFU` [Wu et al., arXiv 2024] **Online feature updates improve online (generalized) label shift adaptation** [[PDF]](https://arxiv.org/abs/2402.03545) [[G-Scholar]](https://scholar.google.com/scholar?cluster=13826390929957704274&hl=en)
-<details open>
+<details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
 <h3>🧠 <strong>Abstract</strong></h3>
