@@ -93,7 +93,7 @@ Test-time adaptation (TTA) aims to adapt a pre-trained model to the target domai
 </p>
 </details>
 
-# - `DROPS` [Wei et al., Proc. ICLR 2023] **Distributionally robust post-hoc classifiers under prior shifts** [[PDF]](https://arxiv.org/abs/2309.08825) [[G-Scholar]](https://scholar.google.com/scholar?cluster=10995720941474911018&hl=en) [[CODE]](https://github.com/weijiaheng/Drops)
+## - `DROPS` [Wei et al., Proc. ICLR 2023] **Distributionally robust post-hoc classifiers under prior shifts** [[PDF]](https://arxiv.org/abs/2309.08825) [[G-Scholar]](https://scholar.google.com/scholar?cluster=10995720941474911018&hl=en) [[CODE]](https://github.com/weijiaheng/Drops)
   <details open>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
@@ -104,7 +104,7 @@ The generalization ability of machine learning models degrades significantly whe
 🔗 <strong>Code</strong>: <a href="https://github.com/weijiaheng/Drops" target="_blank">https://github.com/weijiaheng/Drops</a>.
 </details>
 
-# -  `...` [Wei et al., Proc. ICML 2024] **Learning label shift correction for test-agnostic long-tailed recognition** [[PDF]](https://openreview.net/forum?id=J3xYTh6xtL) [[G-Scholar]](https://scholar.google.com/scholar?cluster=13080086498775196290&hl=en) [[CODE]](https://github.com/Stomach-ache/label-shift-correction)
+## -  `...` [Wei et al., Proc. ICML 2024] **Learning label shift correction for test-agnostic long-tailed recognition** [[PDF]](https://openreview.net/forum?id=J3xYTh6xtL) [[G-Scholar]](https://scholar.google.com/scholar?cluster=13080086498775196290&hl=en) [[CODE]](https://github.com/Stomach-ache/label-shift-correction)
 <details open>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
@@ -133,7 +133,41 @@ Dynamic regret minimization offers a principled way for non-stationary online le
 <br>
 <h3>🖼️ <strong>Method Overview</strong></h3>
 <p><img src="images/TTPA/Efficient.png" >
-<p><img src="images/TTPA/Efficient 1.png" >
+<p><img src="images/TTPA/Efficent 1.png" >
 </p>
 </details>
 
+## - `CPMCN` [Wen et al., Proc. ICLR 2024] **Class probability matching with calibrated networks for label shift adaption** [[PDF]](https://openreview.net/forum?id=mliQ2huFrZ) [[G-Scholar--]]()
+<details open>
+<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
+<br>
+<h3>🧠 <strong>Abstract</strong></h3>
+<p>
+We consider the domain adaptation problem in the context of label shift, where the label distributions between source and target domain differ, but the conditional distributions of features given the label are the same. To solve the label shift adaptation problem, we develop a novel matching framework named class probability matching (CPM). It is inspired by a new understanding of the source domain’s class probability, as well as a specific relationship between class probability ratios and feature probability ratios between the source and target domains. CPM is able to maintain the same theoretical guarantees as the existing feature probability matching framework, while significantly improving the computational efficiency due to directly matching the probabilities of the label variable. Within the CPM framework, we propose an algorithm named class probability matching with calibrated networks (CPMCN) for target domain classification. From the theoretical perspective, we establish a generalization bound of the CPMCN method in order to explain the benefits of introducing calibrated networks. From the experimental perspective, real data comparisons show that CPMCN outperforms existing matching-based and EM-based algorithms.
+</p>
+<br>
+<h3>🎯 <strong>Contributions</strong></h3>
+<p>
+(i) To solve the label shift adaptation problem, we develop a novel matching framework named class probability matching that directly matches on the probabilities of label Y. Based on this framework we propose a new algorithm called CPMCN for label shift adaptation, which applies the calibrated neural network. CPMCN has low computational complexity and high theoretical guarantees.<br>
+(ii) Theoretically, we provide rigorous theoretical guarantees for our proposed matching framework. Moreover, we establish a generalization bound for the CPMCN algorithm, which illustrates the benefit of incorporating a calibrated network in the algorithm.<br>
+(iii) Experimentally, we validate that CPMCN outperforms existing matching methods and EM-based methods, in class probability ratio estimation and target domain classification.
+</p>
+<h3>🖼️ <strong>Method Overview</strong></h3>
+<p><img src="images/TTPA/cpmcn.png" >
+</p>
+</details>
+
+## - `OLS-OFU` [Wu et al., arXiv 2024] **Online feature updates improve online (generalized) label shift adaptation** [[PDF]](https://arxiv.org/abs/2402.03545) [[G-Scholar]](https://scholar.google.com/scholar?cluster=13826390929957704274&hl=en)
+<details open>
+<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
+<br>
+<h3>🧠 <strong>Abstract</strong></h3>
+<p>
+This paper addresses the prevalent issue of label shift in an online setting with missing labels, where data distributions change over time and obtaining timely labels is challenging. While existing methods primarily focus on adjusting or updating the final layer of a pre-trained classifier, we explore the untapped potential of enhancing feature representations using unlabeled data at test-time. Our novel method, Online Label Shift adaptation with Online Feature Updates (OLS-OFU), leverages self-supervised learning to refine the feature extraction process, thereby improving the prediction model. By carefully designing the algorithm, theoretically OLS-OFU maintains the similar online regret convergence to the results in the literature while taking the improved features into account. Empirically, it achieves substantial improvements over existing methods, which is as significant as the gains existing methods have over the baseline (i.e., without distribution shift adaptations).
+</p>
+<h3>🖼️ <strong>Method Overview</strong></h3>
+<p align="center">
+<p><img src="images/TTPA/OLS-OFU.png" >
+<p><img src="images/TTPA/OLS-OFU1.png" >
+</p>
+</details>
