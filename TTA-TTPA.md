@@ -92,3 +92,13 @@ Test-time adaptation (TTA) aims to adapt a pre-trained model to the target domai
 <p><img src="images/TTPA/Label Shift.png" >
 </p>
 </details>
+
+# - `DROPS` [Wei et al., Proc. ICLR 2023] **Distributionally robust post-hoc classifiers under prior shifts** [[PDF]](https://arxiv.org/abs/2309.08825) [[G-Scholar]](https://scholar.google.com/scholar?cluster=10995720941474911018&hl=en) [[CODE]](https://github.com/weijiaheng/Drops)
+  <details open>
+<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
+<br>
+<h3>🧠 <strong>Abstract</strong></h3>
+<p>
+The generalization ability of machine learning models degrades significantly when the test distribution shifts away from the training distribution. We investigate the problem of training models that are robust to shifts caused by changes in the distribution of class-priors or group-priors. The presence of skewed training priors can often lead to the models overfitting to spurious features. Unlike existing methods, which optimize for either the worst or the average performance over classes or groups, our work is motivated by the need for finer control over the robustness properties of the model. We present an extremely lightweight post-hoc approach that performs scaling adjustments to predictions from a pre-trained model, with the goal of minimizing a distributionally robust loss around a chosen target distribution. These adjustments are computed by solving a constrained optimization problem on a validation set and applied to the model during test time. Our constrained optimization objective is inspired from a natural notion of robustness to controlled distribution shifts. Our method comes with provable guarantees and empirically makes a strong case for distributional robust post-hoc classifiers. 
+🔗 <strong>Code</strong>: <a href="https://github.com/weijiaheng/Drops" target="_blank">https://github.com/weijiaheng/Drops</a>.
+</details>
