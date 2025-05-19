@@ -122,7 +122,7 @@ Long-tail learning primarily focuses on mitigating the label distribution shift 
 </p>
 </details>
 
-# - `Wav-O/-R` [Qian et al., Proc. ICML 2024] **Efficient non-stationary online learning by wavelets with applications to online distribution shift adaptation** [[PDF]](https://openreview.net/forum?id=KNedb3bQ4h) [[G-Scholar--]]()
+## - `Wav-O/-R` [Qian et al., Proc. ICML 2024] **Efficient non-stationary online learning by wavelets with applications to online distribution shift adaptation** [[PDF]](https://openreview.net/forum?id=KNedb3bQ4h) [[G-Scholar--]]()
 <details open>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
 <br>
@@ -132,8 +132,8 @@ Dynamic regret minimization offers a principled way for non-stationary online le
 </p>
 <br>
 <h3>🖼️ <strong>Method Overview</strong></h3>
-<p><img src="images/TTPA/Efficient 1.png" >
 <p><img src="images/TTPA/Efficient.png" >
+<p><img src="images/TTPA/Efficient 1.png" >
 </p>
 </details>
 
