@@ -100,5 +100,40 @@ Test-time adaptation (TTA) aims to adapt a pre-trained model to the target domai
 <h3>🧠 <strong>Abstract</strong></h3>
 <p>
 The generalization ability of machine learning models degrades significantly when the test distribution shifts away from the training distribution. We investigate the problem of training models that are robust to shifts caused by changes in the distribution of class-priors or group-priors. The presence of skewed training priors can often lead to the models overfitting to spurious features. Unlike existing methods, which optimize for either the worst or the average performance over classes or groups, our work is motivated by the need for finer control over the robustness properties of the model. We present an extremely lightweight post-hoc approach that performs scaling adjustments to predictions from a pre-trained model, with the goal of minimizing a distributionally robust loss around a chosen target distribution. These adjustments are computed by solving a constrained optimization problem on a validation set and applied to the model during test time. Our constrained optimization objective is inspired from a natural notion of robustness to controlled distribution shifts. Our method comes with provable guarantees and empirically makes a strong case for distributional robust post-hoc classifiers. 
+<p>
 🔗 <strong>Code</strong>: <a href="https://github.com/weijiaheng/Drops" target="_blank">https://github.com/weijiaheng/Drops</a>.
 </details>
+
+# -  `...` [Wei et al., Proc. ICML 2024] **Learning label shift correction for test-agnostic long-tailed recognition** [[PDF]](https://openreview.net/forum?id=J3xYTh6xtL) [[G-Scholar]](https://scholar.google.com/scholar?cluster=13080086498775196290&hl=en) [[CODE]](https://github.com/Stomach-ache/label-shift-correction)
+<details open>
+<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
+<br>
+<h3>🧠 <strong>Abstract</strong></h3>
+<p>
+Long-tail learning primarily focuses on mitigating the label distribution shift between long-tailed training data and uniformly distributed test data. However, in real-world applications, we often encounter a more intricate challenge where the test label distribution is agnostic. To address this problem, we first theoretically establish the substantial potential for reducing the generalization error if we can precisely estimate the test label distribution. Motivated by the theoretical insight, we introduce a simple yet effective solution called label shift correction (LSC). LSC estimates the test label distribution within the proposed framework of generalized black box shift estimation, and adjusts the predictions from a pre-trained model to align with the test distribution. Theoretical analyses confirm that accurate estimation of test label distribution can effectively reduce the generalization error. Extensive experimental results demonstrate that our method significantly outperforms previous state-of-the-art approaches, especially when confronted with non-uniform test label distribution. Notably, the proposed method is general and complements existing long-tail learning approaches, consistently improving their performance. The source code is available at <a href="https://github.com/Stomach-ache/label-shift-correction" target="_blank">https://github.com/Stomach-ache/label-shift-correction</a>.
+</p>
+<br>
+<h3>🎯 <strong>Contributions</strong></h3>
+<p>
+1) We introduce a straightforward yet effective method, LSC, to address test-agnostic long-tail learning, capable of accurately estimating test label distributions.<br>
+2) We establish the theoretical foundation to demonstrate the capability of our method to provide more precise test label distribution estimations and reduce generalization error.<br>
+3) We confirm the efficacy of the proposed method on three benchmark datasets.<br>
+4) Importantly, LSC is compatible with existing long-tail learning methods, consistently improving their performance in test-agnostic scenarios.
+</p>
+</details>
+
+# - `Wav-O/-R` [Qian et al., Proc. ICML 2024] **Efficient non-stationary online learning by wavelets with applications to online distribution shift adaptation** [[PDF]](https://openreview.net/forum?id=KNedb3bQ4h) [[G-Scholar--]]()
+<details open>
+<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
+<br>
+<h3>🧠 <strong>Abstract</strong></h3>
+<p>
+Dynamic regret minimization offers a principled way for non-stationary online learning, where the algorithm’s performance is evaluated against changing comparators. Prevailing methods often employ a two-layer online ensemble, consisting of a group of base learners with different configurations and a meta learner that combines their outputs. Given the evident computational overhead associated with two-layer algorithms, this paper investigates how to attain optimal dynamic regret without deploying a model ensemble. To this end, we introduce the notion of underlying dynamic regret, a specific form of the general dynamic regret that can encompass many applications of interest. We show that almost optimal dynamic regret can be obtained using a single-layer model alone. This is achieved by an adaptive restart equipped with wavelet detection, wherein a novel streaming wavelet operator is introduced to online update the wavelet coefficients via a carefully designed binary indexed tree. We apply our method to the online label shift adaptation problem, leading to new algorithms with optimal dynamic regret and significantly improved computation/storage efficiency compared to prior arts. Extensive experiments validate our proposal.
+</p>
+<br>
+<h3>🖼️ <strong>Method Overview</strong></h3>
+<p><img src="images/TTPA/Efficient 1.png" >
+<p><img src="images/TTPA/Efficient.png" >
+</p>
+</details>
+
