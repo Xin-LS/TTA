@@ -30,6 +30,19 @@ For the COVID-19 severity prediction task, we use the public chest CT dataset iC
 </p>
 </details>
 
+### - `SADE` [Zhang et al., Proc. NeurIPS 2022] **Self-supervised aggregation of diverse experts for test-agnostic long-tailed recognition** [[PDF]](https://openreview.net/forum?id=m7CmxlpHTiu) [[G-Scholar]](https://scholar.google.com/scholar?cluster=16295847624184830192&hl=en) [[CODE]](https://github.com/vanint/sade-agnosticlt)
+<details>
+<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
+<br>
+<h3>🧠 <strong>Abstract</strong></h3><p>
+Existing long-tailed recognition methods, aiming to train class-balanced models from long-tailed data, generally assume the models would be evaluated on the uniform test class distribution. However, practical test class distributions often violate this assumption (e.g., being either long-tailed or even inversely long-tailed), which may lead existing methods to fail in real applications. In this paper, we study a more practical yet challenging task, called test-agnostic long-tailed recognition, where the training class distribution is long-tailed while the test class distribution is agnostic and not necessarily uniform. In addition to the issue of class imbalance, this task poses another challenge: the class distribution shift between the training and test data is unknown. To tackle this task, we propose a novel approach, called Self-supervised Aggregation of Diverse Experts, which consists of two strategies: (i) a new skill-diverse expert learning strategy that trains multiple experts from a single and stationary long-tailed dataset to separately handle different class distributions; (ii) a novel test-time expert aggregation strategy that leverages self-supervision to aggregate the learned multiple experts for handling unknown test class distributions. We theoretically show that our self-supervised strategy has a provable ability to simulate test-agnostic class distributions. Promising empirical results demonstrate the effectiveness of our method on both vanilla and test-agnostic long-tailed recognition. The source code is available at https://github.com/Vanint/SADE-AgnosticLT.
+</p><br>
+<h3>🖼️ <strong>Method Overview</strong></h3>
+<p><img src="images/TTPA/SADE.png" >
+</p>
+</details>
+
+
 ### - `TTLSA` [Sun et al., Proc. NeurIPS 2023] **Beyond invariance: Test-time label-shift adaptation for distributions with" spurious" correlations** [[PDF]](https://arxiv.org/abs/2211.15646) [[G-Scholar]](https://scholar.google.com/scholar?cluster=8297779371205142813&hl=en) [[CODE]](https://github.com/nalzok/test-time-label-shift)
 <details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
@@ -59,18 +72,6 @@ The CheXpert dataset contains 224,316 chest X-rays from 65,240 patients, annotat
 </p>
 </details>
 
-### - `SADE` [Zhang et al., Proc. NeurIPS 2022] **Self-supervised aggregation of diverse experts for test-agnostic long-tailed recognition** [[PDF]](https://openreview.net/forum?id=m7CmxlpHTiu) [[G-Scholar]](https://scholar.google.com/scholar?cluster=16295847624184830192&hl=en) [[CODE]](https://github.com/vanint/sade-agnosticlt)
-<details>
-<summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
-<br>
-<h3>🧠 <strong>Abstract</strong></h3><p>
-Existing long-tailed recognition methods, aiming to train class-balanced models from long-tailed data, generally assume the models would be evaluated on the uniform test class distribution. However, practical test class distributions often violate this assumption (e.g., being either long-tailed or even inversely long-tailed), which may lead existing methods to fail in real applications. In this paper, we study a more practical yet challenging task, called test-agnostic long-tailed recognition, where the training class distribution is long-tailed while the test class distribution is agnostic and not necessarily uniform. In addition to the issue of class imbalance, this task poses another challenge: the class distribution shift between the training and test data is unknown. To tackle this task, we propose a novel approach, called Self-supervised Aggregation of Diverse Experts, which consists of two strategies: (i) a new skill-diverse expert learning strategy that trains multiple experts from a single and stationary long-tailed dataset to separately handle different class distributions; (ii) a novel test-time expert aggregation strategy that leverages self-supervision to aggregate the learned multiple experts for handling unknown test class distributions. We theoretically show that our self-supervised strategy has a provable ability to simulate test-agnostic class distributions. Promising empirical results demonstrate the effectiveness of our method on both vanilla and test-agnostic long-tailed recognition. The source code is available at https://github.com/Vanint/SADE-AgnosticLT.
-</p><br>
-<h3>🖼️ <strong>Method Overview</strong></h3>
-<p><img src="images/TTPA/SADE.png" >
-</p>
-</details>
-
 ### - `FedCal` [Xu and Huang, Proc. CIKM 2023] **A joint training-calibration framework for test-time personalization with label shift in federated learning** [[PDF]](https://dl.acm.org/doi/abs/10.1145/3583780.3615173) [[G-Scholar--]]()
 <details>
 <summary><strong>📌 Abstract, Contributions, Datasets & Methods</strong></summary>
@@ -90,7 +91,7 @@ From the theoretical perspective, we establish the optimal convergence rates of 
 (iii) Through experiments on real datasets under various label shift scenarios, CPMKM outperforms FPM-based and EM-based methods in both class probability estimation and target classification. Notably, performance improves as the target sample size increases and stabilizes thereafter, validating the theoretical convergence.
 </p><br>
 <h3>🖼️ <strong>Method Overview</strong></h3>
-<p><img src="C.png" >
+<p><img src="images/TTPA/C.png" >
 </p>
 </details>
 
