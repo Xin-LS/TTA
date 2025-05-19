@@ -1,6 +1,6 @@
 # Test-Time Prior Adaptation
 
-**Test-Time Prior Adaptation **(TTPA) is a class of methods addressing the label shift problem, where the class distribution during model training often differs from that during testing. Traditional algorithms typically fail to accurately calibrate predicted probabilities or confidence scores in such scenarios. <p>
+<b>Test-Time Prior Adaptation (TTPA) </b> is a class of methods addressing the label shift problem, where the class distribution during model training often differs from that during testing. Traditional algorithms typically fail to accurately calibrate predicted probabilities or confidence scores in such scenarios. <p>
 This collection features representative papers from recent years in this field, spanning diverse applications such as medical image classification, long-tailed recognition, and federated learning.
 
 ---
@@ -76,7 +76,7 @@ Based on this observation, we propose a test-time label shift correction that ad
 We evaluate our method, which we call <strong>“Test-Time Label-Shift Adaptation” (TTLSA)</strong>, on several standard image and text datasets, as well as the CheXpert chest X-ray dataset, and show that it improves performance over methods that target invariance to changes in the distribution, as well as baseline empirical risk minimization methods.
 </p><p>
 🔗 <strong>Code</strong>: <a href="https://github.com/nalzok/test-time-label-shift" target="_blank">https://github.com/nalzok/test-time-label-shift</a>
-</p><br>
+</p>
 
 #### 🎯 Contributions
 "Motivated by the above, in this paper we propose a test-time approach for optimally adapting to distribution shifts which arise due to changes in the underlying joint prior between the class labels y and the nuisance labels z. We can view these changes as due to a hidden common cause u, such as the location of a specific hospital. Thus we assume ps(u)̸ = pt(u), where ps is the source distribution, and pt is the target distribution. Consequently, pi(y, z) = ∑ u p(y, z|u)pi(u) will change across domains i. However, we assume that the generative model of the features is invariant across domains, so pi(x | y, z) = p(x | y, z). See Figure 1 for an illustration of our modeling assumptions. The key observation behind our method is that our assumptions are equivalent to the standard 'label shift assumption', except it is defined with respect to an expanded label m = (y, z), which we call the meta-label. We call this the 'expanded label shift assumption'. This lets use existing label shift techniques, such as Alexandari et al. [2020], Lipton et al. [2018], Garg et al. [2020], to adapt our model using a small sample of unlabeled data {xn ∼ pt(x)} from the target domain to adjust for the shift in the prior over meta-labels, as we discuss in Section 3.2. Importantly, although our approach relies on the assumption that p(x | y, z) is preserved across distribution shifts, it is based on learning a discriminative base model ps(y, z, | x), which we adjust to the target distribution pt(y | x), as we explain in Section 3.1. Thus we do not need to fit a generative model to the data. We do need access to labeled examples of the confounding factor z at training time, but such data is often collected anyway (albeit in limited quantities) especially for protected attributes. Additionally, because it operates at test-time, our method does not require retraining to adapt the base model to multiple target domains. We therefore call our approach Test-Time Label Shift Adaptation (TTLSA)"
@@ -108,7 +108,7 @@ In domain adaptation, covariate shift and label shift problems are two distinct 
 To address label shift adaptation more naturally and effectively, inspired by a new representation of the source domain’s class probability, we propose a new framework called class probability matching (CPM) which matches two class probability functions on the one-dimensional label space to estimate the class probability ratio, fundamentally different from FPM operating on the d-dimensional feature space. Furthermore, by incorporating the kernel logistic regression into the CPM framework to estimate the conditional probability, we propose an algorithm called class probability matching using kernel methods (CPMKM) for label shift adaptation.
 From the theoretical perspective, we establish the optimal convergence rates of CPMKM with respect to the cross-entropy loss for multi-class label shift adaptation. From the experimental perspective, comparisons on real datasets demonstrate that CPMKM outperforms existing FPM-based and maximum-likelihood-based algorithms.
 </p>
-<br>
+
 
 #### 🎯 Contributions
 <p>
@@ -135,14 +135,13 @@ From the theoretical perspective, we establish the optimal convergence rates of 
 <p>
 Test-time adaptation (TTA) aims to adapt a pre-trained model to the target domain in a batch-by-batch manner during inference. While label distributions often exhibit imbalances in real-world scenarios, most previous TTA approaches typically assume that both source and target domain datasets have balanced label distribution. Due to the fact that certain classes appear more frequently in certain domains (e.g., buildings in cities, trees in forests), it is natural that the label distribution shifts as the domain changes. However, we discover that the majority of existing TTA methods fail to address the coexistence of covariate and label shifts. To tackle this challenge, we propose a novel label shift adapter that can be incorporated into existing TTA approaches to deal with label shifts during the TTA process effectively. Specifically, we estimate the label distribution of the target domain to feed it into the label shift adapter. Subsequently, the label shift adapter produces optimal parameters for target label distribution. By predicting only the parameters for a part of the pre-trained source model, our approach is computationally efficient and can be easily applied, regardless of the model architectures. Through extensive experiments, we demonstrate that integrating our strategy with TTA approaches leads to substantial performance improvements under the joint presence of label and covariate shifts.
 </p>
-<br>
 
 #### 🎯 Contributions
 <p>
 • We introduce a novel label shift adapter that produces the optimal parameters according to the label distribution. By utilizing the label shift adapter, we can develop a robust TTA algorithm that can handle both covariate and label shifts simultaneously.<br>
 • Our approach is easily applicable to any model regardless of the model architecture and pre-training process. It can be simply integrated with other TTA algorithms.<br>
 • Through extensive experiments on six benchmarks, we demonstrate that our method enhances the performance significantly when source and target domain datasets have class-imbalanced label distributions.
-</p><br>
+</p>
 
 #### 🖼️ Method Overview
 <p>
@@ -181,7 +180,6 @@ The generalization ability of machine learning models degrades significantly whe
 <p>
 Long-tail learning primarily focuses on mitigating the label distribution shift between long-tailed training data and uniformly distributed test data. However, in real-world applications, we often encounter a more intricate challenge where the test label distribution is agnostic. To address this problem, we first theoretically establish the substantial potential for reducing the generalization error if we can precisely estimate the test label distribution. Motivated by the theoretical insight, we introduce a simple yet effective solution called label shift correction (LSC). LSC estimates the test label distribution within the proposed framework of generalized black box shift estimation, and adjusts the predictions from a pre-trained model to align with the test distribution. Theoretical analyses confirm that accurate estimation of test label distribution can effectively reduce the generalization error. Extensive experimental results demonstrate that our method significantly outperforms previous state-of-the-art approaches, especially when confronted with non-uniform test label distribution. Notably, the proposed method is general and complements existing long-tail learning approaches, consistently improving their performance. The source code is available at <a href="https://github.com/Stomach-ache/label-shift-correction" target="_blank">https://github.com/Stomach-ache/label-shift-correction</a>.
 </p>
-<br>
 
 #### 🎯 Contributions
 <p>
@@ -206,7 +204,6 @@ Long-tail learning primarily focuses on mitigating the label distribution shift 
 <p>
 Dynamic regret minimization offers a principled way for non-stationary online learning, where the algorithm’s performance is evaluated against changing comparators. Prevailing methods often employ a two-layer online ensemble, consisting of a group of base learners with different configurations and a meta learner that combines their outputs. Given the evident computational overhead associated with two-layer algorithms, this paper investigates how to attain optimal dynamic regret without deploying a model ensemble. To this end, we introduce the notion of underlying dynamic regret, a specific form of the general dynamic regret that can encompass many applications of interest. We show that almost optimal dynamic regret can be obtained using a single-layer model alone. This is achieved by an adaptive restart equipped with wavelet detection, wherein a novel streaming wavelet operator is introduced to online update the wavelet coefficients via a carefully designed binary indexed tree. We apply our method to the online label shift adaptation problem, leading to new algorithms with optimal dynamic regret and significantly improved computation/storage efficiency compared to prior arts. Extensive experiments validate our proposal.
 </p>
-<br>
 
 #### 🖼️ Method Overview
 <p>
@@ -229,7 +226,6 @@ Dynamic regret minimization offers a principled way for non-stationary online le
 <p>
 We consider the domain adaptation problem in the context of label shift, where the label distributions between source and target domain differ, but the conditional distributions of features given the label are the same. To solve the label shift adaptation problem, we develop a novel matching framework named class probability matching (CPM). It is inspired by a new understanding of the source domain’s class probability, as well as a specific relationship between class probability ratios and feature probability ratios between the source and target domains. CPM is able to maintain the same theoretical guarantees as the existing feature probability matching framework, while significantly improving the computational efficiency due to directly matching the probabilities of the label variable. Within the CPM framework, we propose an algorithm named class probability matching with calibrated networks (CPMCN) for target domain classification. From the theoretical perspective, we establish a generalization bound of the CPMCN method in order to explain the benefits of introducing calibrated networks. From the experimental perspective, real data comparisons show that CPMCN outperforms existing matching-based and EM-based algorithms.
 </p>
-<br>
 
 #### 🎯 Contributions
 <p>
