@@ -280,8 +280,8 @@ In this work, we propose a novel SFDA framework for cross-modality medical image
 
 #### 🖼️ Method Overview
 <p align="center">
-  <img src="images/TTPA/OLS-OFU.png" alt="OLS-OFU Overview">  
-  <img src="images/TTPA/OLS-OFU1.png" alt="OLS-OFU Detail">
+  <img src="images/TTPA/Source0.png" alt="SFDA Overview">  
+  <img src="images/TTPA/Source.png" alt="SFDA Detail">
 </p>
 
 </details>
@@ -308,8 +308,8 @@ The domain discrepancy existed between medical images acquired in different situ
 
 #### 🖼️ Method Overview
 <p align="center">
-  <img src="images/TTPA/ProSFDA.png" alt="OLS-OFU Overview">  
-  <img src="images/TTPA/ProSFDA1.png" alt="OLS-OFU Detail">
+  <img src="images/TTPA/ProSFDA.png" alt="ProSFDA Overview">  
+  <img src="images/TTPA/ProSFDA1.png" alt="ProSFDA Detail">
 </p>
 
 </details>
