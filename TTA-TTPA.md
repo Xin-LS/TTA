@@ -58,6 +58,34 @@ Existing long-tailed recognition methods, aiming to train class-balanced models 
 </details>
 
 ---
+### `ProSFDA` [Hu et al., **arXiv 2022**]  
+**ProSFDA: Prompt Learning based Source-free Domain Adaptation for Medical  Image Segmentation**  
+[📄 PDF](https://arxiv.org/abs/2211.11514) · [💻 CODE](https://github.com/ShishuaiHu/ProSFDA)
+
+<details>
+<summary>📌 Abstract · Method Overview</summary>
+
+#### 🧠 Abstract
+<p>
+The domain discrepancy existed between medical images acquired in different situations renders a major hurdle in deploying pre-trained medical image segmentation models for clinical use. Since it is less possible to distribute training data with the pre-trained model due to the huge data size and privacy concern, source-free unsupervised domain adaptation (SFDA) has recently been increasingly studied based on either pseudo labels or prior knowledge. However, the image features and probability maps used by pseudo label-based SFDA and the consistent prior assumption and the prior prediction network used by prior-guided SFDA may become less reliable when the domain discrepancy is large. In this paper, we propose a Prompt learning based SFDA (ProSFDA) method for medical image segmentation, which aims to improve the quality of domain adaption by minimizing explicitly the domain discrepancy. Specifically, in the prompt learning stage, we estimate source-domain images via adding a domain-aware prompt to target-domain images, then optimize the prompt via minimizing the statistic alignment loss, and thereby prompt the source model to generate reliable predictions on (altered) target-domain images. In the feature alignment stage, we also align the features of target-domain images and their styles-augmented counterparts to optimize the source model, and hence push the model to extract compact features. We evaluate our ProSFDA on two multi-domain medical image segmentation benchmarks. Our results indicate that the proposed ProSFDA outperforms substantially other SFDA methods and is even comparable to UDA methods. Code will be available at https://github.com/ShishuaiHu/ProSFDA.
+</p>
+
+#### 🎯 Contributions
+<p>
+(i) We highlight the domain discrepancy issue existed under the SFDA setting and introduce PLS to address it from the perspective of estimating a domain-aware visual prompt via minimizing the statistic alignment loss.<br>
+(ii)  We develop FAS to force the model to extract compact features from altered target-domain images and diminish the impact of instance variations..<br>
+(iii) Our ProSFDA achieves superior performance against other SFDA methods on two multi-domain medical image segmentation benchmarks
+</p>
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTPA/ProSFDA.png" alt="ProSFDA Overview">  
+  <img src="images/TTPA/ProSFDA1.png" alt="ProSFDA Detail">
+</p>
+
+</details>
+
+---
 
 ### `TTLSA` [Sun et al., **NeurIPS 2023**]  
 **Beyond invariance: Test-time label-shift adaptation for distributions with “spurious” correlations**  
@@ -192,6 +220,32 @@ Long-tail learning primarily focuses on mitigating the label distribution shift 
 </details>
 
 ---
+### `SFDA` [Yu et al., **MICCAI 2023**]  
+**Source free domain adaptation for medical image segmentation with fourier style mining**  
+[📄 PDF](https://arxiv.org/abs/2307.09769) · [💻 CODE]( https://github.com/CSCYQJ/MICCAI23-ProtoContra-SFDA)
+
+<details>
+<summary>📌 Abstract · Method Overview</summary>
+
+#### 🧠 Abstract
+<p>
+Unsupervised domain adaptation (UDA) has increasingly gained interest for its capacity to transfer the knowledge learned from a labeled source domain to an unlabeled target domain. However, typical UDA methods require concurrent access to both the source and target domain data, which largely limits its application in medical scenarios where source data is often unavailable due to privacy concern. To tackle the source data-absent problem, we present a novel two-stage source-free domain adaptation (SFDA) framework for medical image segmentation, where only a well-trained source segmentation model and unlabeled target data are available during domain adaptation. Specifically, in the prototype-anchored feature alignment stage, we first utilize the weights of the pre-trained pixel-wise classifier as source prototypes, which preserve the information of source features. Then, we introduce the bi-directional transport to align the target features with class prototypes by minimizing its expected cost. On top of that, a contrastive learning stage is further devised to utilize those pixels with unreliable predictions for a more compact target feature distribution. Extensive experiments on a cross-modality medical segmentation task demonstrate the superiority of our method in large domain discrepancy settings compared with the state-of-the-art SFDA approaches and even some UDA methods. Code is available at: https://github.com/CSCYQJ/MICCAI23-ProtoContra-SFDA.
+</p>
+
+#### 🎯 Contributions
+<p>
+In this work, we propose a novel SFDA framework for cross-modality medical image segmentation. Our framework contains two sequentially conducted stages, i.e., Prototype-anchored Feature Alignment (PFA) stage and Contrastive Learning (CL) stage. As previous works [12] noted, the weights of the pre-trained classifier (i.e., projection head) can be employed as the source prototypes during domain adaptation. That means we can characterize the features of each class with a source prototype and align the target features with them instead of the inaccessible source features. To that end, during the PFA stage, we first provide a target-to-prototype transport to ensure the target features get close to the corresponding prototypes. Then, considering the trivial solution that all target features are assigned to the dominant class prototype (e.g., background), we add a reverse prototype-to-target transport to encourage diversity. However, although most target features have been assigned to the correct class prototype after PFA, some hard samples with high prediction uncertainty still exist in the decision boundary (see Fig. 1(a→b)). Moreover, we observe that those unreliable predictions usually get confused among only a few classes instead of all classes [18]. Taking the unreliable pixel in Fig. 1(b,c) for example, though it achieves similar high probabilities on the spleen and left kidney, the model is pretty sure about this pixel not belonging to the liver and right kidney. Inspired by this, we use confusing pixels as the negative samples for those unlikely classes, and then introduce the CL stage to pursue a more compact target feature distribution. Finally, we conduct experiments on a cross-modality abdominal multi-organ segmentation task. With only a source model and unlabeled target data, our method outperforms the state-of-the-art SFDA and even achieves comparable results with some classical UDA approaches.
+</p>
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTPA/Source0.png" alt="SFDA Overview">  
+  <img src="images/TTPA/Source.png" alt="SFDA Detail">
+</p>
+
+</details>
+
+---
 
 ### `Wav-O/R` [Qian et al., **ICML 2024**]  
 **Efficient non-stationary online learning by wavelets with applications to online distribution shift adaptation**  
@@ -261,55 +315,6 @@ This paper addresses the prevalent issue of label shift in an online setting wit
 
 </details>
 
-### `SFDA` [Yu et al., **MICCAI 2023**]  
-**Source free domain adaptation for medical image segmentation with fourier style mining**  
-[📄 PDF](https://arxiv.org/abs/2307.09769) · [💻 CODE]( https://github.com/CSCYQJ/MICCAI23-ProtoContra-SFDA)
-
-<details>
-<summary>📌 Abstract · Method Overview</summary>
-
-#### 🧠 Abstract
-<p>
-Unsupervised domain adaptation (UDA) has increasingly gained interest for its capacity to transfer the knowledge learned from a labeled source domain to an unlabeled target domain. However, typical UDA methods require concurrent access to both the source and target domain data, which largely limits its application in medical scenarios where source data is often unavailable due to privacy concern. To tackle the source data-absent problem, we present a novel two-stage source-free domain adaptation (SFDA) framework for medical image segmentation, where only a well-trained source segmentation model and unlabeled target data are available during domain adaptation. Specifically, in the prototype-anchored feature alignment stage, we first utilize the weights of the pre-trained pixel-wise classifier as source prototypes, which preserve the information of source features. Then, we introduce the bi-directional transport to align the target features with class prototypes by minimizing its expected cost. On top of that, a contrastive learning stage is further devised to utilize those pixels with unreliable predictions for a more compact target feature distribution. Extensive experiments on a cross-modality medical segmentation task demonstrate the superiority of our method in large domain discrepancy settings compared with the state-of-the-art SFDA approaches and even some UDA methods. Code is available at: https://github.com/CSCYQJ/MICCAI23-ProtoContra-SFDA.
-</p>
-
-#### 🎯 Contributions
-<p>
-In this work, we propose a novel SFDA framework for cross-modality medical image segmentation. Our framework contains two sequentially conducted stages, i.e., Prototype-anchored Feature Alignment (PFA) stage and Contrastive Learning (CL) stage. As previous works [12] noted, the weights of the pre-trained classifier (i.e., projection head) can be employed as the source prototypes during domain adaptation. That means we can characterize the features of each class with a source prototype and align the target features with them instead of the inaccessible source features. To that end, during the PFA stage, we first provide a target-to-prototype transport to ensure the target features get close to the corresponding prototypes. Then, considering the trivial solution that all target features are assigned to the dominant class prototype (e.g., background), we add a reverse prototype-to-target transport to encourage diversity. However, although most target features have been assigned to the correct class prototype after PFA, some hard samples with high prediction uncertainty still exist in the decision boundary (see Fig. 1(a→b)). Moreover, we observe that those unreliable predictions usually get confused among only a few classes instead of all classes [18]. Taking the unreliable pixel in Fig. 1(b,c) for example, though it achieves similar high probabilities on the spleen and left kidney, the model is pretty sure about this pixel not belonging to the liver and right kidney. Inspired by this, we use confusing pixels as the negative samples for those unlikely classes, and then introduce the CL stage to pursue a more compact target feature distribution. Finally, we conduct experiments on a cross-modality abdominal multi-organ segmentation task. With only a source model and unlabeled target data, our method outperforms the state-of-the-art SFDA and even achieves comparable results with some classical UDA approaches.
-</p>
-
-#### 🖼️ Method Overview
-<p align="center">
-  <img src="images/TTPA/Source0.png" alt="SFDA Overview">  
-  <img src="images/TTPA/Source.png" alt="SFDA Detail">
-</p>
-
-</details>
 
 
-### `ProSFDA` [Hu et al., **arXiv 2022**]  
-**ProSFDA: Prompt Learning based Source-free Domain Adaptation for Medical  Image Segmentation**  
-[📄 PDF](https://arxiv.org/abs/2211.11514) · [💻 CODE](https://github.com/ShishuaiHu/ProSFDA)
 
-<details>
-<summary>📌 Abstract · Method Overview</summary>
-
-#### 🧠 Abstract
-<p>
-The domain discrepancy existed between medical images acquired in different situations renders a major hurdle in deploying pre-trained medical image segmentation models for clinical use. Since it is less possible to distribute training data with the pre-trained model due to the huge data size and privacy concern, source-free unsupervised domain adaptation (SFDA) has recently been increasingly studied based on either pseudo labels or prior knowledge. However, the image features and probability maps used by pseudo label-based SFDA and the consistent prior assumption and the prior prediction network used by prior-guided SFDA may become less reliable when the domain discrepancy is large. In this paper, we propose a Prompt learning based SFDA (ProSFDA) method for medical image segmentation, which aims to improve the quality of domain adaption by minimizing explicitly the domain discrepancy. Specifically, in the prompt learning stage, we estimate source-domain images via adding a domain-aware prompt to target-domain images, then optimize the prompt via minimizing the statistic alignment loss, and thereby prompt the source model to generate reliable predictions on (altered) target-domain images. In the feature alignment stage, we also align the features of target-domain images and their styles-augmented counterparts to optimize the source model, and hence push the model to extract compact features. We evaluate our ProSFDA on two multi-domain medical image segmentation benchmarks. Our results indicate that the proposed ProSFDA outperforms substantially other SFDA methods and is even comparable to UDA methods. Code will be available at https://github.com/ShishuaiHu/ProSFDA.
-</p>
-
-#### 🎯 Contributions
-<p>
-(i) We highlight the domain discrepancy issue existed under the SFDA setting and introduce PLS to address it from the perspective of estimating a domain-aware visual prompt via minimizing the statistic alignment loss.<br>
-(ii)  We develop FAS to force the model to extract compact features from altered target-domain images and diminish the impact of instance variations..<br>
-(iii) Our ProSFDA achieves superior performance against other SFDA methods on two multi-domain medical image segmentation benchmarks
-</p>
-
-#### 🖼️ Method Overview
-<p align="center">
-  <img src="images/TTPA/ProSFDA.png" alt="ProSFDA Overview">  
-  <img src="images/TTPA/ProSFDA1.png" alt="ProSFDA Detail">
-</p>
-
-</details>
