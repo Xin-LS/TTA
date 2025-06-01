@@ -5,6 +5,7 @@ This collection features representative papers from recent years in this field, 
 # Test-Time Adaptation & Domain Generalization Papers
 
 ## Image classification
+
 ---
 
 ### `SSGen` [Xiao et al., **ICLR 2022**]  
@@ -50,6 +51,7 @@ We refer to the proposed method as marginal entropy minimization with one test p
   <img src="images/TTIA/MEMO1.png" alt="SSGEN Overview">
 </p>
 </details>
+
 ---
 
 ### `TTT-MAE` [Gandelsman et al., **NeurIPS 2022**]  
