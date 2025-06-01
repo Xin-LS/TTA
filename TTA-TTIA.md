@@ -95,6 +95,7 @@ Additionally, the model more easily adapts from source domains to agnostic targe
   <img src="images/TTIA/DDG2.png" >
 </p>
 </details>
+
 ---
 
 ### `TAF-Cal` [Zhao et al., **IJCAI 2022**]  
@@ -118,6 +119,7 @@ For the white matter hyperintensity segmentation task, we use the MICCAI WMH Cha
   <img src="images/TTIA/TAF-Cal.png" alt="TAF-Cal Overview">
 </p>
 </details>
+
 ---
 
 ### `TTCP++` [Sarkar et al., **WACV 2022**]  
@@ -145,6 +147,7 @@ We propose a method to improve DNN robustness against unseen noisy corruptions, 
   <img src="images/TTIA/TTCP2.png" >
 </p>
 </details>
+
 ---
 
 ### `TTN` [Lim et al., **ICLR 2023**]  
@@ -174,6 +177,7 @@ We identify a trade-off between CBN and TBN and introduce **Test-Time Normalizat
  <img src="images/TTIA/TTN2.png" >
 </p>
 </details>
+
 ---
 
 ### `ESA` [Xiao et al., **ICLR 2023**]  
@@ -196,6 +200,7 @@ In this paper, we propose energy-based test sample adaptation for domain general
  <img src="images/TTIA/ESA2.png" >
 </p>
 </details>
+
 ---
 
 ### `TSB` [Park et al., **ICML 2023**]  
@@ -220,6 +225,7 @@ Our solution is compatible with not only the style-augmentation based DG schemes
   <img src="images/TTIA/TSB1.png" >
 </p>
 </details>
+
 ---
 
 ### `PromptAlign` [Samadh et al., **NeurIPS 2023**]  
@@ -242,6 +248,7 @@ The promising zero-shot generalization of vision-language models such as CLIP ha
   <img src="images/TTIA/PA1.png" >
 </p>
 </details>
+
 ---
 
 ### `Diffusion-TTA` [Prabhudesai et al., **NeurIPS 2023**]  
@@ -261,6 +268,7 @@ We present Diffusion-based Test Time Adaptation (TTA) (Diffusion-TTA), a method 
   <img src="images/TTIA/DTTA1.png" >
 
 </details>
+
 ---
 
 ### `DDA` [Gao et al., **CVPR 2023**]  
@@ -285,6 +293,7 @@ Test-time adaptation harnesses test inputs to improve the accuracy of a model tr
   <img src="images/TTIA/DDA2.png" >
 
 </details>
+
 ---
 
 ### `IAI` [Jeon et al., **ICCV 2023**]  
@@ -307,6 +316,7 @@ Recent studies have substantiated that machine learning algorithms including con
   <img src="images/TTIA/IAI2.png" >
   
 </details>
+
 ---
 
 ### `TT-NSS` [Mehra et al., **ICML Workshops 2023**]  
@@ -328,11 +338,15 @@ Achieving high accuracy on data from domains unseen during training is a fundame
 </p>
   <img src="images/TTIA/TTNSS1.png" >
 </details>  
+
 ---
 
 ### `GDA` [Tsai et al., **CVPR 2024**]  
 **GDA: Generalized diffusion for robust test-time adaptation**  
 [📄 PDF](https://arxiv.org/abs/2404.00095) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=10549928891728768790&hl=en)
+<details>
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+  
 #### 🧠 Abstract  
 Machine learning models face generalization challenges when exposed to out-of-distribution (OOD) samples with unforeseen distribution shifts. Recent research reveals that for vision tasks, test-time adaptation employing diffusion models can achieve state-of-the-art accuracy improvements on OOD samples by generating domain-aligned samples without altering the model’s weights. Unfortunately, those studies have primarily focused on pixel-level corruptions, thereby lacking the generalization to adapt to a broader range of OOD types. We introduce Generalized Diffusion Adaptation (GDA), a novel diffusion-based test-time adaptation method robust against diverse OOD types. Specifically, GDA iteratively guides the diffusion by applying a marginal entropy loss derived from the model, in conjunction with style and content preservation losses during the reverse sampling process. In other words, GDA considers the model’s output behavior and the samples’ semantic information as a whole, reducing ambiguity in downstream tasks. Evaluation across various model architectures and OOD benchmarks indicates that GDA consistently surpasses previous diffusion-based adaptation methods. Notably, it achieves the highest classification accuracy improvements, ranging from 4.4% to 5.02% on ImageNet-C and 2.5% to 7.4% on Rendition, Sketch, and Stylized benchmarks. This performance highlights GDA’s generalization to a broader range of OOD benchmarks.
 
@@ -347,7 +361,8 @@ Machine learning models face generalization challenges when exposed to out-of-di
   <img src="images/TTIA/GDA.png" >
 </p>
   <img src="images/TTIA/GDA1.png" >
-  </details>
+</details>
+  
 ---
 
 ### `MoDE` [Ma et al., **CVPR 2024**]  
@@ -367,6 +382,7 @@ The success of contrastive language-image pretraining (CLIP) relies on the super
 <p align="center">
   <img src="images/TTIA/MoDE.png" >
   </details>
+  
 ---
 
 ### `CloudFixer` [Shim et al., **ECCV 2024**]  
@@ -386,6 +402,7 @@ The success of contrastive language-image pretraining (CLIP) relies on the super
 <p align="center">
   <img src="images/TTIA/CF.png" >
 </details>
+
   ---
 
 ### `TPS` [Sui et al., **CVPR Workshops 2024**]  
@@ -409,6 +426,7 @@ Advancements in vision-language models (VLMs) have propelled the field of comput
   <img src="images/TTIA/TPS2.png" >
 </p>
 </details>
+
 ---
 
 
