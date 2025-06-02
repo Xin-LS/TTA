@@ -14,6 +14,7 @@ This collection features representative papers from recent years in this field, 
 
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+
 #### 🧠 Abstract
 We strive to learn a model from a set of source domains that generalizes well to unseen target domains. The main challenge in such a domain generalization scenario is the unavailability of any target domain data during training, resulting in the learned model not being explicitly adapted to the unseen target domains. We propose learning to generalize across domains on single test samples. We leverage a meta-learning paradigm to learn our model to acquire the ability of adaptation with single samples at training time so as to further adapt itself to each single test sample at test time. We formulate the adaptation to the single test sample as a variational Bayesian inference problem, which incorporates the test sample as a conditional into the generation of model parameters. The adaptation to each test sample requires only one feed-forward computation at test time without any fine-tuning or self-supervised training on additional data from the unseen domains. Extensive ablation studies demonstrate that our model learns the ability to adapt models to each single sample by mimicking domain shifts during training. Further, our model achieves at least comparable– and often better– performance than state-of-the-art methods on multiple benchmarks for domain generalization 1.
 
@@ -103,7 +104,8 @@ Additionally, the model more easily adapts from source domains to agnostic targe
 [📄 PDF](https://arxiv.org/abs/2205.06427) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=15047408040728759993&hl=en) · [💻 CODE](https://github.com/xingchenzhao/TAF-Cal)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract
+
+  #### 🧠 Abstract
 The topic of generalizing machine learning models learned on a collection of source domains to unknown target domains is challenging. While many domain generalization (DG) methods have achieved promising results, they primarily rely on the source domains at train-time without manipulating the target domains at test-time. Thus, it is still possible that those methods can overfit to source domains and perform poorly on target domains. Driven by the observation that domains are strongly related to styles, we argue that reducing the gap between source and target styles can boost models’ generalizability. To solve the dilemma of having no access to the target domain during training, we introduce Test-time Fourier Style Calibration (TF-Cal) for calibrating the target domain style on the fly during testing. To access styles, we utilize Fourier transformation to decompose features into amplitude (style) features and phase (semantic) features. Furthermore, we present an effective technique to Augment Amplitude Features (AAF) to complement TF-Cal. Extensive experiments on several popular DG benchmarks and a segmentation dataset for medical images demonstrate that our method outperforms state-of-the-art methods.
 
 #### 🎯 Contributions
@@ -127,7 +129,8 @@ For the white matter hyperintensity segmentation task, we use the MICCAI WMH Cha
 [📄 PDF](https://openaccess.thecvf.com/content/WACV2022/html/Sarkar_Leveraging_Test-Time_Consensus_Prediction_for_Robustness_Against_Unseen_Noise_WACV_2022_paper.html) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=3457983965127110405&hl=en)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract
+
+  #### 🧠 Abstract
 We propose a method to improve DNN robustness against unseen noisy corruptions, such as Gaussian noise, Shot Noise, Impulse Noise, Speckle noise with different levels of severity by leveraging ensemble technique through a consensus-based prediction method using self-supervised learning at inference time. We also propose to enhance the model training by considering other aspects of the issue, i.e., noise in data and better representation learning, which shows even better generalization performance with the consensus-based prediction strategy. We report results of each noisy corruption on the standard CIFAR10-C and ImageNet-C benchmarks, which show significant boost in performance over previous methods. We also introduce results for MNIST-C and TinyImageNet-C to show the usefulness of our method across datasets of different complexities to provide robustness against unseen noise. We show results with different architectures to validate our method against other baseline methods and also conduct experiments to show the usefulness of each part of our method.
 
 #### 🎯 Contributions
@@ -155,7 +158,8 @@ We propose a method to improve DNN robustness against unseen noisy corruptions, 
 [📄 PDF](https://openreview.net/forum?id=EQfeudmWLQ) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=12984514498411836030&hl=en)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract
+
+  #### 🧠 Abstract
 This paper proposes a novel batch normalization strategy for test-time adaptation.  
 Recent test-time adaptation (TTA) methods heavily rely on modified batch normalization, particularly **Transductive Batch Normalization (TBN)**, which recalculates the mean and variance from the test batch rather than using the running statistics from source data as in **Conventional Batch Normalization (CBN)**. Although TBN mitigates performance degradation under domain shift, it suffers when assumptions like large and i.i.d. test batches are violated.  
 We identify a trade-off between CBN and TBN and introduce **Test-Time Normalization (TTN)** — a method that interpolates between CBN and TBN using layer-wise, domain-shift sensitivity-based weights. TTN is robust across a wide range of test batch sizes and evaluation scenarios. Moreover, TTN can be integrated into other TTA frameworks to further boost their performance. Extensive experiments demonstrate that TTN achieves state-of-the-art results across multiple benchmarks.
@@ -185,7 +189,8 @@ We identify a trade-off between CBN and TBN and introduce **Test-Time Normalizat
 [📄 PDF](https://openreview.net/forum?id=3dnrKbeVatv) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=3027943185987486652&hl=en)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 In this paper, we propose energy-based sample adaptation at test time for domain generalization. Where previous works adapt their models to target domains, we adapt the unseen target samples to source-trained models. To this end, we design a discriminative energy-based model, which is trained on source domains to jointly model the conditional distribution for classification and data distribution for sample adaptation. The model is optimized to simultaneously learn a classifier and an energy function. To adapt target samples to source distributions, we iteratively update the samples by energy minimization with stochastic gradient Langevin dynamics. Moreover, to preserve the categorical information in the sample during adaptation, we introduce a categorical latent variable into the energy-based model. The latent variable is learned from the original sample before adaptation by variational inference and fixed as a condition to guide the sample update. Experiments on six benchmarks for classification of images and microblog threads demonstrate the effectiveness of our proposal.
 
 #### 🎯 Contributions  
@@ -208,7 +213,8 @@ In this paper, we propose energy-based test sample adaptation for domain general
 [📄 PDF](https://arxiv.org/abs/2306.04911)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 In domain generalization (DG), the target domain is unknown when the model is being trained, and the trained model should successfully work on an arbitrary (and possibly unseen) target domain during inference. This is a difficult problem, and despite active studies in recent years, it remains a great challenge. In this paper, we take a simple yet effective approach to tackle this issue. We propose test-time style shifting, which shifts the style of the test sample (that has a large style gap with the source domains) to the nearest source domain that the model is already familiar with, before making the prediction. This strategy enables the model to handle any target domains with arbitrary style statistics, without additional model update at test-time. Additionally, we propose style balancing, which provides a great platform for maximizing the advantage of test-time style shifting by handling the DG-specific imbalance issues. The proposed ideas are easy to implement and successfully work in conjunction with various other DG schemes. Experimental results on different datasets show the effectiveness of our methods.
 
 #### 🎯 Contributions  
@@ -233,7 +239,8 @@ Our solution is compatible with not only the style-augmentation based DG schemes
 [📄 PDF](https://arxiv.org/abs/2311.01459) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=3235088620563898394&hl=en) · [💻 CODE](https://github.com/jameelhassan/PromptAlign)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 The promising zero-shot generalization of vision-language models such as CLIP has led to their adoption using prompt learning for numerous downstream tasks. Previous works have shown test-time prompt tuning using entropy minimization to adapt text prompts for unseen domains. While effective, this overlooks the key cause for performance degradation to unseen domains– distribution shift. In this work, we explicitly handle this problem by aligning the out-of-distribution (OOD) test sample statistics to those of the source data using prompt tuning. We use a single test sample to adapt multi-modal prompts at test time by minimizing the feature distribution shift to bridge the gap in the test domain. Evaluating against the domain generalization benchmark, our method improves zero-shot top-1 accuracy beyond existing prompt-learning techniques, with a 3.08% improvement over the baseline MaPLe. In cross-dataset generalization with unseen categories across 10 datasets, our method improves consistently across all datasets compared to the existing state-of-the-art. Our source code and models are available at https://jameelhassan.github.io/promptalign/
 
 #### 🎯 Contributions  
@@ -256,7 +263,8 @@ The promising zero-shot generalization of vision-language models such as CLIP ha
 [📄 PDF](https://openreview.net/forum?id=gUTVpByfVX) · [💻 CODE](https://github.com/mihirp1998/Diffusion-TTA)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 The advancements in generative modeling, particularly the advent of diffusion models, have sparked a fundamental question: how can these models be effectively used for discriminative tasks? In this work, we find that generative models can be great test-time adapters for discriminative models. Our method, Diffusion-TTA, adapts pre-trained discriminative models such as image classifiers, segmenters and depth predictors, to each unlabelled example in the test set using generative feedback from a diffusion model. We achieve this by modulating the conditioning of the diffusion model using the output of the discriminative model. We then maximize the image likelihood objective by backpropagating the gradients to discriminative model’s parameters. We show Diffusion-TTA significantly enhances the accuracy of various large-scale pre-trained discriminative models, such as, ImageNet classifiers, CLIP models, image pixel labellers and image depth predictors. Diffusion-TTA outperforms existing test-time adaptation methods, including TTT-MAE and TENT, and particularly shines in online adaptation setups, where the discriminative model is continually adapted to each example in the test set. We provide access to code, results, and visualizations on our website: [diffusion-tta.github.io](https://diffusion-tta.github.io/).
 
 #### 🎯 Contributions  
@@ -276,7 +284,8 @@ We present Diffusion-based Test Time Adaptation (TTA) (Diffusion-TTA), a method 
 [📄 PDF](https://arxiv.org/abs/2207.03442) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=8145404192355562400&hl=en) · [💻 CODE](https://github.com/shiyegao/DDA)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 Test-time adaptation harnesses test inputs to improve the accuracy of a model trained on source data when tested on shifted target data. Most methods update the source model by (re-)training on each target domain. While re-training can help, it is sensitive to the amount and order of the data and the hyperparameters for optimization. We update the target data instead, and project all test inputs toward the source domain with a generative diffusion model. Our diffusion-driven adaptation (DDA) method shares its models for classification and generation across all domains, training both on source then freezing them for all targets, to avoid expensive domain-wise re-training. We augment diffusion with image guidance and classifier self-ensembling to automatically decide how much to adapt. Input adaptation by DDA is more robust than model adaptation across a variety of corruptions, models, and data regimes on the ImageNet-C benchmark. With its input-wise updates, DDA succeeds where model adaptation degrades on too little data (small batches), on dependent data (correlated orders), or on mixed data (multiple corruptions).
 
 #### 🎯 Contributions  
@@ -301,7 +310,8 @@ Test-time adaptation harnesses test inputs to improve the accuracy of a model tr
 [📄 PDF](https://openaccess.thecvf.com/content/ICCV2023/html/Jeon_A_Unified_Framework_for_Robustness_on_Diverse_Sampling_Errors_ICCV_2023_paper.html) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=9460419101326058787&hl=en)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 Recent studies have substantiated that machine learning algorithms including convolutional neural networks often suffer from unreliable generalizations when there is a significant gap between the source and target data distributions. To mitigate this issue, a predetermined distribution shift has been addressed independently (e.g., single domain generalization, de-biasing). However, a distribution mismatch cannot be clearly estimated because the target distribution is unknown at training. Therefore, a conservative approach robust on unexpected diverse distributions is more desirable in practice. Our work starts from a motivation to allow adaptive inference once we know the target, since it is accessible only at testing. Instead of assuming and fixing the target distribution at training, our proposed approach allows adjusting the feature space the model refers to at every prediction, i.e., instance-wise adaptive inference. The extensive evaluation demonstrates our method is effective for generalization on diverse distributions.
 
 #### 🎯 Contributions  
@@ -324,7 +334,8 @@ Recent studies have substantiated that machine learning algorithms including con
 [📄 PDF](https://openreview.net/forum?id=YVwW5yBISo)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 Achieving high accuracy on data from domains unseen during training is a fundamental challenge in machine learning. While state-of-the-art neural networks have achieved impressive performance on various tasks, their predictions are biased towards domain-dependent information (e.g., image styles) rather than domain-invariant information (e.g., image content). This makes them unreliable for deployment in risk-sensitive settings such as autonomous driving. In this work, we propose a novel inference procedure, Test-Time Neural Style Smoothing (TT-NSS), that produces risk-averse predictions using a “style smoothed” version of a classifier. Specifically, the style-smoothed classifier classifies a test image as the most probable class predicted by the original classifier on random re-stylizations of the test image. TT-NSS uses a neural style transfer module to stylize the test image on the fly, requires black-box access to the classifier, and crucially, abstains when predictions of the original classifier on the stylized images lack consensus. We further propose a neural style smoothing-based training procedure that improves the prediction consistency and the performance of the style-smoothed classifier on non-abstained samples. Our experiments on the PACS dataset and its variations, both in single and multiple source domain settings, highlight the effectiveness of our methods at producing risk-averse predictions on unseen domains.
 
 #### 🎯 Contributions  
@@ -370,7 +381,8 @@ Machine learning models face generalization challenges when exposed to out-of-di
 [📄 PDF](https://arxiv.org/abs/2404.16030) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=6687597386819654107&hl=en) · [💻 CODE](https://github.com/facebookresearch/MetaCLIP/tree/main/mode)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 The success of contrastive language-image pretraining (CLIP) relies on the supervision from the pairing between images and captions, which tends to be noisy in web-crawled data. We present Mixture of Data Experts (MoDE) and learn a system of CLIP data experts via clustering. Each data expert is trained on one data cluster, being less sensitive to false negative noises in other clusters. At inference time, we ensemble their outputs by applying weights determined through the correlation between task metadata and cluster conditions. To estimate the correlation precisely, the samples in one cluster should be semantically similar, but the number of data experts should still be reasonable for training and inference. As such, we consider the ontology in human language and propose to use fine-grained cluster centers to represent each data expert at a coarse-grained level. Experimental studies show that four CLIP data experts on ViT-B/16 outperform the ViT-L/14 by OpenAI CLIP and OpenCLIP on zero-shot image classification but with less (<35%) training cost. Meanwhile, MoDE can train all data expert asynchronously and can flexibly include new data experts. The code is available at: https://github.com/facebookresearch/MetaCLIP/tree/main/mode
 
 #### 🎯 Contributions  
@@ -390,7 +402,8 @@ The success of contrastive language-image pretraining (CLIP) relies on the super
 [📄 PDF](https://arxiv.org/abs/2407.16193) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=4842877858434940251&hl=en) · [💻 CODE](https://github.com/shimazing/CloudFixer)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 3D point clouds captured from real-world sensors frequently encompass noisy points due to various obstacles, such as occlusion, limited resolution, and variations in scale. These challenges hinder the deployment of pre-trained point cloud recognition models trained on clean point clouds, leading to significant performance degradation. While test-time adaptation (TTA) strategies have shown promising results on this issue in the 2D domain, their application to 3D point clouds remains underexplored. Among TTA methods, an input adaptation approach, which directly converts test instances to the source domain using a pre-trained diffusion model, has been proposed in the 2D domain. Despite its robust TTA performance in practical situations, naively adopting this into the 3D domain may be suboptimal due to the neglect of inherent properties of point clouds, and its prohibitive computational cost. Motivated by these limitations, we propose **CloudFixer**, a test-time input adaptation method tailored for 3D point clouds, employing a pre-trained diffusion model. Specifically, CloudFixer optimizes geometric transformation parameters with carefully designed objectives that leverage the geometric properties of point clouds. We also substantially improve computational efficiency by avoiding backpropagation through the diffusion model and a prohibitive generation process. Furthermore, we propose an online model adaptation strategy by aligning the original model prediction with that of the adapted input. Extensive experiments showcase the superiority of CloudFixer over various TTA baselines, excelling in handling common corruptions and natural distribution shifts across diverse real-world scenarios. Our code is available at https://github.com/shimazing/CloudFixer.
 
 #### 🎯 Contributions  
@@ -410,7 +423,8 @@ The success of contrastive language-image pretraining (CLIP) relies on the super
 [📄 PDF](https://arxiv.org/abs/2403.12952) · [🔍 G-Scholar](https://scholar.google.com/scholar?cluster=15629234813577501375&hl=en) · [💻 CODE](https://github.com/elaine-sui/TPS)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 Advancements in vision-language models (VLMs) have propelled the field of computer vision, particularly in the zero-shot learning setting. Despite their promise, the effectiveness of these models often diminishes due to domain shifts in test environments. To address this, we introduce the **Test-Time Prototype Shifting (TPS)** framework, a pioneering approach designed to adapt VLMs to test datasets using unlabeled test inputs. Our method is based on the notion of modulating per-class prototypes in the shared embedding space. By pre-computing and caching prototypes generated with the pre-trained text encoder, TPS not only facilitates optimization-free prototype reuse for subsequent predictions but also enables seamless integration with current advancements in prompt engineering. At test-time, TPS dynamically learns shift vectors for each prototype based solely on the given test sample, effectively bridging the domain gap and enhancing classification accuracy. A notable aspect of our framework is its significantly reduced memory and computational demands when compared to conventional text-prompt tuning methods. Extensive evaluations across 15 image classification datasets involving natural distribution shifts and cross-dataset generalization, as well as in context-dependent visual reasoning, demonstrate TPS’s superior performance, achieving state-of-the-art results while reducing resource requirements. Code is available at: [https://github.com/elaine-sui/TPS](https://github.com/elaine-sui/TPS)
 
 #### 🎯 Contributions  
@@ -438,7 +452,8 @@ Domain and content adaptive convolution based multi-source domain generalization
 [📄 PDF](https://arxiv.org/abs/2109.05676) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=7895018487155935722&hl=en) | [💻 Code](https://github.com/ShishuaiHu/DCAC/)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract
+
+  #### 🧠 Abstract
 The domain gap caused mainly by variable medical image quality renders a major obstacle on the path between training a segmentation model in the lab and applying the trained model to unseen clinical data. To address this issue, domain generalization methods have been proposed, which however usually use static convolutions and are less flexible. In this paper, we propose a multi-source domain generalization model based on the domain and content adaptive convolution (DCAC) for the segmentation of medical images across different modalities. Specifically, we design the domain adaptive convolution (DAC) module and content adaptive convolution (CAC) module and incorporate both into an encoder-decoder backbone. In the DAC module, a dynamic convolutional head is conditioned on the predicted domain code of the input to make our model adapt to the unseen target domain. In the CAC module, a dynamic convolutional head is conditioned on the global image features to make our model adapt to the test image. We evaluated the DCAC model against the baseline and four state-of-the-art domain generalization methods on the prostate segmentation, COVID-19 lesion segmentation, and optic cup/optic disc segmentation tasks. Our results not only indicate that the proposed DCAC model outperforms all competing methods on each segmentation task but also demonstrate the effectiveness of the DAC and CAC modules. Code is available at https://git.io/DCAC.
 
 #### 🎯 Contributions
@@ -477,6 +492,7 @@ This dataset contains 789 training cases and 281 test cases of fundus images. Th
 <details>
 
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+
 #### 🧠 Abstract
 We propose a test-time adaptation method for cross-domain image segmentation. Our method is simple: Given a new unseen instance at test time, we adapt a pre-trained model by conducting instance-specific BatchNorm (statistics) calibration. Our approach has two core components. First, we replace the manually designed BatchNorm calibration rule with a learnable module. Second, we leverage strong data augmentation to simulate random domain shifts for learning the calibration rule. In contrast to existing domain adaptation methods, our method does not require accessing the target domain data at training time or conducting computationally expensive test-time model training/optimization. Equipping our method with models trained by standard recipes achieves significant improvement, comparing favorably with several state-of-the-art domain generalization and one-shot unsupervised domain adaptation approaches. Combining our method with the domain generalization methods further improves performance, reaching a new state of the art.
 
@@ -528,7 +544,8 @@ Domain generalization typically requires data from multiple source domains for m
 [📄 PDF](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136990051.pdf) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=16396707704713565964&hl=en)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract
+
+  #### 🧠 Abstract
 Computer vision systems for autonomous navigation must generalize well in adverse weather and illumination conditions expected in the real world. However, semantic segmentation of images captured in such conditions remains a challenging task for current state-of-the-art (SOTA) methods trained on broad daylight images, due to the associated distribution shift. On the other hand, domain adaptation techniques developed for the purpose rely on the availability of the source data, (un)labeled target data and/or its auxiliary information (e.g., GPS). Even then, they typically adapt to a single (specific) target domain(s). To remedy this, we propose a novel, fully test time, adaptation technique, named Master of ALL (MALL), for simultaneous generalization to multiple target domains. MALL learns to generalize on unseen adverse weather images from multiple target domains directly at the inference time. More specifically, given a pre-trained model and its parameters, MALL enforces edge consistency prior at the inference stage and updates the model based on (a) a single test sample at a time (MALL-sample), or (b) continuously for the whole test domain (MALL-domain). Not only the target data, MALL also does not need access to the source data and thus, can be used with any pre-trained model. Using a simple model pre-trained on daylight images, MALL outperforms specially designed adverse weather semantic segmentation methods, both in domain generalization and test time adaptation settings. Our experiments on foggy, snow, night, cloudy, overcast, and rainy conditions demonstrate the target domain-agnostic effectiveness of our approach. We further show that MALL can improve the performance of a model on an adverse weather condition, even when the model is already pre-trained for the specific condition.
 
 #### 🎯 Contributions
@@ -552,6 +569,7 @@ Computer vision systems for autonomous navigation must generalize well in advers
 <details>
   
  <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+
 #### 🧠 Abstract
 Automatic liver tumor segmentation could assist radiologists in diagnosis, and deep learning methods have significantly improved performance. However, these methods rely on large-scale well-annotated training datasets, which are costly to obtain. Learning from synthetic data is a promising solution, where synthetic tumors are injected into healthy images to form training pairs. Directly applying models trained on synthetic data to real images suffers from domain shift. We propose Synthetic-to-Real Test-Time Training (SR-TTT) to reduce this domain gap. SR-TTT introduces a self-supervised auxiliary task, two-step reconstruction, linking the main segmentation output to improve learning. A scheduled mixture strategy is designed to prevent error accumulation during training. At test time, the model adapts to each test image using the auxiliary task's self-supervision to enhance inference. Evaluations on two public liver tumor segmentation datasets show SR-TTT effectively mitigates synthetic-to-real domain shift and outperforms state-of-the-art methods.
 
@@ -583,7 +601,8 @@ Automatic liver tumor segmentation could assist radiologists in diagnosis, and d
 [📄 PDF](https://openreview.net/forum?id=b8F8xz6_DuX) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=14308566097544119245&hl=en) | [💻 Code](https://github.com/mihirp1998/Slot-TTA)
 <details>
   <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract
+
+  #### 🧠 Abstract
 We consider the problem of segmenting scenes into constituent objects. Current supervised visual detectors, though effective within their training distribution, often fail to segment out-of-distribution scenes. Recent test-time adaptation methods using auxiliary self-supervised losses have shown promise in image classification for generalization beyond training domains. However, we find these losses insufficient for instance segmentation without architectural inductive biases. Slot-centric generative models for image segmentation segment scenes into entities in a self-supervised way via pixel reconstruction. Building on these, we propose Slot-TTA, a semi-supervised instance segmentation model with a slot-centric image rendering component, adapted per scene at test time by gradient descent on reconstruction or novel view synthesis objectives. Test-time adaptation significantly improves segmentation in out-of-distribution scenes. Evaluations on scene segmentation benchmarks demonstrate substantial improvements over state-of-the-art supervised detectors and self-supervised domain adaptation models. Full paper: https://arxiv.org/abs/2203.11194
 
 #### 🎯 Contributions
@@ -607,7 +626,8 @@ We consider the problem of segmenting scenes into constituent objects. Current s
 [📄 PDF](https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Dynamically_Instance-Guided_Adaptation_A_Backward-Free_Approach_for_Test-Time_Domain_Adaptive_CVPR_2023_paper.html) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=5310249894401773826&hl=en) | [💻 Code](https://github.com/Waybaba/DIGA)
 <details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-#### 🧠 Abstract
+
+  #### 🧠 Abstract
 In this paper, we study the application of Test-time Domain Adaptation in semantic segmentation (TTDA-Seg), where both efficiency and effectiveness are crucial. Existing methods either suffer from low efficiency (e.g., backward optimization) or ignore semantic adaptation (e.g., distribution alignment), and are prone to error accumulation caused by unstable optimization and abnormal distributions. To address these issues, we propose a novel backward-free approach called Dynamically Instance-Guided Adaptation (DIGA). DIGA dynamically guides each instance's adaptation in a non-parametric manner, avoiding error accumulation and high computational costs. It consists of two modules: a distribution adaptation module (DAM) that mixes the instance and source BatchNorm statistics to promote robust representation, and a semantic adaptation module (SAM) that combines historical prototypes with instance-level prototypes to refine semantic predictions. Extensive experiments on five target domains demonstrate DIGA’s superior effectiveness and efficiency, establishing new state-of-the-art performance for TTDA-Seg. Source code: https://github.com/Waybaba/DIGA
 
 #### 🎯 Contributions
@@ -805,7 +825,8 @@ We evaluate our method on two widely-used domain-adaptive medical image segmenta
 **Test-time optimization for domain adaptive open vocabulary segmentation**  
 [📄 PDF](https://arxiv.org/abs/2501.04696) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=11664277597711483004&hl=en)
 <details>
-#### 🧠 Abstract
+
+  #### 🧠 Abstract
 We present Seg-TTO, a novel framework for zero-shot, open-vocabulary semantic segmentation (OVSS), designed to excel in specialized domain tasks. While current open vocabulary approaches show impressive performance on standard segmentation benchmarks under zero-shot settings, they fall short of supervised counterparts on highly domain-specific datasets. We focus on segmentation-specific test-time optimization to address this gap. Segmentation requires an understanding of multiple concepts within a single image while retaining the locality and spatial structure of representations. We propose a novel self-supervised objective adhering to these requirements and use it to align the model parameters with input images at test time. In the textual modality, we learn multiple embeddings for each category to capture diverse concepts within an image, while in the visual modality, we calculate pixel-level losses followed by embedding aggregation operations specific to preserving spatial structure. Our resulting framework termed Seg-TTO is a plug-and-play module. We integrate Seg-TTO with three state-of-the-art OVSS approaches and evaluate across 22 challenging OVSS tasks covering a range of specialized domains. Our Seg-TTO demonstrates clear performance improvements (up to 27% mIoU increase on some datasets) establishing new state-of-the-art. Our code and models will be released publicly.
 
 
@@ -826,7 +847,8 @@ We present Seg-TTO, a novel framework for zero-shot, open-vocabulary semantic se
 [📄 PDF](https://arxiv.org/abs/2501.18753) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=18003844780246240761&hl=en)
 <details>
 <summary>📌 Abstract · Contributions</summary>  
-#### 🧠 Abstract  
+
+  #### 🧠 Abstract  
 Task-generic promptable image segmentation aims to achieve segmentation of diverse samples under a single task description by utilizing only one task-generic prompt. Current methods leverage the generalization capabilities of Vision-Language Models (VLMs) to infer instance-specific prompts from these task-generic prompts in order to guide the segmentation process. However, when VLMs struggle to generalise to some image instances, predicting instance-specific prompts becomes poor. To solve this problem, we introduce Instance-specific Negative Mining for Task-Generic Promptable Segmentation (INT). The key idea of INT is to adaptively reduce the influence of irrelevant (negative) prior knowledge whilst to increase the use the most plausible prior knowledge, selected by negative mining with higher contrast, in order to optimise instance-specific prompts generation. Specifically, INT consists of two components: (1) instance-specific prompt generation, which progressively filters out incorrect information in prompt generation; (2) semantic mask generation, which ensures each image instance segmentation matches correctly the semantics of the instance-specific prompts. INT is validated on six datasets, including camouflaged objects and medical images, demonstrating its effectiveness, robustness and scalability.
 
 #### 🎯 Contributions  
