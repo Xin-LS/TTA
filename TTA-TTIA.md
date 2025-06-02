@@ -2,7 +2,7 @@
 
 <b>Test-Time Input Adaptation (TTIA) refers to a category of techniques designed to address the input distribution shift problem, where the feature distribution encountered during model deployment frequently diverges from the distribution observed in the training data. Conventional approaches typically struggle to maintain robust performance and prediction reliability under such conditions. <p>
 This collection features representative papers from recent years in this field, spanning diverse applications such as medical image classification, long-tailed recognition, and federated learning.
-# Test-Time Adaptation & Domain Generalization Papers
+
 
 ## Image classification
 
