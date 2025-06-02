@@ -318,7 +318,7 @@ This paper addresses the prevalent issue of label shift in an online setting wit
 ## Segmentation
 ---
 ### `DCAC` [Hu et al., **IEEE TMI 2022**]  
-**Domain and content adaptive convolution based multi-source domain generalization in medical image segmentation**  
+Domain and content adaptive convolution based multi-source domain generalization in medical image segmentation 
 [📄 PDF](https://arxiv.org/abs/2109.05676) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=7895018487155935722&hl=en) | [💻 Code](https://github.com/ShishuaiHu/DCAC/)
 ---
 
