@@ -436,97 +436,409 @@ Advancements in vision-language models (VLMs) have propelled the field of comput
 ### `DCAC` [Hu et al., **IEEE TMI 2022**]  
 Domain and content adaptive convolution based multi-source domain generalization in medical image segmentation 
 [📄 PDF](https://arxiv.org/abs/2109.05676) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=7895018487155935722&hl=en) | [💻 Code](https://github.com/ShishuaiHu/DCAC/)
+<details>
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+#### 🧠 Abstract
+The domain gap caused mainly by variable medical image quality renders a major obstacle on the path between training a segmentation model in the lab and applying the trained model to unseen clinical data. To address this issue, domain generalization methods have been proposed, which however usually use static convolutions and are less flexible. In this paper, we propose a multi-source domain generalization model based on the domain and content adaptive convolution (DCAC) for the segmentation of medical images across different modalities. Specifically, we design the domain adaptive convolution (DAC) module and content adaptive convolution (CAC) module and incorporate both into an encoder-decoder backbone. In the DAC module, a dynamic convolutional head is conditioned on the predicted domain code of the input to make our model adapt to the unseen target domain. In the CAC module, a dynamic convolutional head is conditioned on the global image features to make our model adapt to the test image. We evaluated the DCAC model against the baseline and four state-of-the-art domain generalization methods on the prostate segmentation, COVID-19 lesion segmentation, and optic cup/optic disc segmentation tasks. Our results not only indicate that the proposed DCAC model outperforms all competing methods on each segmentation task but also demonstrate the effectiveness of the DAC and CAC modules. Code is available at https://git.io/DCAC.
+
+#### 🎯 Contributions
+- We used the domain-discriminative information embedded in the encoder feature maps to generate the domain code of each input image, which establishes the relationship between multiple source domains and the unseen target domain.  
+- We designed the dynamic convolution-based DAC module and CAC module, which respectively enable our DCAC model to adapt not only to the unseen target domain but also to each test image.  
+- We presented extensive experimental results, which demonstrate not only the effectiveness of DAC and CAC modules but also the superiority of our DCAC model over state-of-the-art domain generalization techniques on three medical image segmentation tasks.
+
+#### 📂 Datasets
+<p>
+Prostate Segmentation Dataset:
+This dataset includes 116 T2-weighted MRI cases collected from six different domains. The data was preprocessed to keep only the slices containing the prostate region, ensuring consistent and objective evaluation.
+
+COVID-19 Lesion Segmentation Dataset:
+It consists of 120 CT scans from RT-PCR confirmed COVID-19 patients. The scans have pixel-level lesion annotations and come from a multi-institutional, multinational expert-annotated COVID-19 image database.
+
+OC/OD Segmentation Dataset:
+This dataset contains 789 training cases and 281 test cases of fundus images. The images are sourced from four public datasets and have varying statistical characteristics.
+</p><br>
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/DCAC/DCAC.png" >
+  </p>
+  <img src="images/DCAC/DCAC1.png" >
+  </p>
+  <img src="images/DCAC/DCAC2.png" >
+</p>
+</details>
+
 
 ---
 
 ### `InstCal` [Zou et al., **Proc. ECCV 2022**]  
 **Learning instance-specific adaptation for cross-domain segmentation**  
 [📄 PDF](https://link.springer.com/chapter/10.1007/978-3-031-19827-4_27) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=3479758947644774894&hl=en) | [💻 Code](https://github.com/Yuliang-Zou/InstCal-Pano)
+<details>
+
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+#### 🧠 Abstract
+We propose a test-time adaptation method for cross-domain image segmentation. Our method is simple: Given a new unseen instance at test time, we adapt a pre-trained model by conducting instance-specific BatchNorm (statistics) calibration. Our approach has two core components. First, we replace the manually designed BatchNorm calibration rule with a learnable module. Second, we leverage strong data augmentation to simulate random domain shifts for learning the calibration rule. In contrast to existing domain adaptation methods, our method does not require accessing the target domain data at training time or conducting computationally expensive test-time model training/optimization. Equipping our method with models trained by standard recipes achieves significant improvement, comparing favorably with several state-of-the-art domain generalization and one-shot unsupervised domain adaptation approaches. Combining our method with the domain generalization methods further improves performance, reaching a new state of the art.
+
+#### 🎯 Contributions
+– We propose a simple instance-specific test-time adaptation method and show its applicability to off-the-shelf segmentation models containing BatchNorm.  
+– We conduct a detailed ablation study and analysis to validate our design choices in semantic segmentation. Applying the optimal configuration to the more complex panoptic segmentation task leads to promising performance.  
+– When combined with the models pre-trained by standard recipes, our method compares favorably with state-of-the-art one-shot UDA methods and domain generalizing semantic segmentation methods. Our approach can also be combined with existing DG methods to improve the performance further.
+
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/IC.png">
+</p>
+  <img src="images/TTIA/IC1.png">
+</p>
+
+</details>
 
 ---
 
 ### `TASD` [Liu et al., **Proc. AAAI 2022**]  
 **Single-domain generalization in medical image segmentation via test-time adaptation from shape dictionary**  
 [📄 PDF](https://arxiv.org/abs/2206.14467) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=5193566977778450536&hl=en)
+</details>
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+
+#### 🧠 Abstract
+Domain generalization typically requires data from multiple source domains for model learning. However, such strong assumption may not always hold in practice, especially in medical field where the data sharing is highly concerned and sometimes prohibitive due to privacy issue. This paper studies the important yet challenging single domain generalization problem, in which a model is learned under the worst case scenario with only one source domain to directly generalize to different unseen target domains. We present a novel approach to address this problem in medical image segmentation, which extracts and integrates the semantic shape prior information of segmentation that are invariant across domains and can be well-captured even from single domain data to facilitate segmentation under distribution shifts. Besides, a test time adaptation strategy with dual-consistency regularization is further devised to promote dynamic incorporation of these shape priors under each unseen domain to improve model generalizability. Extensive experiments on two medical image segmentation tasks demonstrate the consistent improvements of our method across various unseen domains, as well as its superiority over state-of-the-art approaches in addressing domain generalization under the worst-case scenario.
+
+#### 🎯 Contributions
+- We present a novel approach to address the challenging single domain generalization problem for medical image segmentation, by explicitly exploiting the general semantic shape priors that are extractable from single-domain data and are generalizable across domains to assist domain generalization under the worst-case scenario.  
+- We also devise an effective test-time adaptation strategy with dual-consistency regularization, which allows to adaptively utilize the shape prior information at any unseen data distributions to improve model generalizability.  
+- We conduct extensive experiments on two typical medical image segmentation tasks, i.e., prostate MRI and retinal fundus image segmentation. With only single-domain training, our method significantly improves generalization performance on many unseen domains, outperforming the state-of-the-arts.
+
+#### 📂 Datasets
+- **Prostate MRI segmentation:** Prostate T2-weighted MRIs collected from six different clinical centers from three public datasets (NCI-ISBI13, I2CVB, PROMISE12). Data are resized to 384×384 and normalized; a 2D network is used due to varying slice thickness.  
+- **Fundus image segmentation:** Retinal fundus images from four medical institutions from three public datasets (REFUGE, DrishtiGS, RIM-ONE-r3). ROIs around optic discs are cropped and resized to 384×384 as network input, ensuring coverage of optic disc and cup regions despite distribution shifts.
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/TASD.png">
+</p>
+</details>
 
 ---
 
 ### `MALL` [Reddy et al., **Proc. ECCV 2022**]  
 **Master of all: Simultaneous generalization of urban-scene segmentation to all adverse weather conditions**  
 [📄 PDF](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136990051.pdf) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=16396707704713565964&hl=en)
+<details>
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+#### 🧠 Abstract
+Computer vision systems for autonomous navigation must generalize well in adverse weather and illumination conditions expected in the real world. However, semantic segmentation of images captured in such conditions remains a challenging task for current state-of-the-art (SOTA) methods trained on broad daylight images, due to the associated distribution shift. On the other hand, domain adaptation techniques developed for the purpose rely on the availability of the source data, (un)labeled target data and/or its auxiliary information (e.g., GPS). Even then, they typically adapt to a single (specific) target domain(s). To remedy this, we propose a novel, fully test time, adaptation technique, named Master of ALL (MALL), for simultaneous generalization to multiple target domains. MALL learns to generalize on unseen adverse weather images from multiple target domains directly at the inference time. More specifically, given a pre-trained model and its parameters, MALL enforces edge consistency prior at the inference stage and updates the model based on (a) a single test sample at a time (MALL-sample), or (b) continuously for the whole test domain (MALL-domain). Not only the target data, MALL also does not need access to the source data and thus, can be used with any pre-trained model. Using a simple model pre-trained on daylight images, MALL outperforms specially designed adverse weather semantic segmentation methods, both in domain generalization and test time adaptation settings. Our experiments on foggy, snow, night, cloudy, overcast, and rainy conditions demonstrate the target domain-agnostic effectiveness of our approach. We further show that MALL can improve the performance of a model on an adverse weather condition, even when the model is already pre-trained for the specific condition.
+
+#### 🎯 Contributions
+- We propose to enforce edge consistency prior during inference for unsupervised test time adaptation of semantic segmentation techniques for adverse weather images. Taking inspiration from [43], we propose a Weighted Log Multi-class Normalized Cut loss for the unsupervised test time training.  
+- We propose a new framework named MALL in two different settings: MALL-sample adapts a pre-trained model to a single image at a time, whereas MALL-domain adapts a model to the target domain at the test time.  
+- We perform rigorous experiments to demonstrate that MALL outperforms all SOTA techniques in multiple settings: domain generalization, and unsupervised domain adaptation.  
+- In a one of its kind experiment, we demonstrate the simultaneous, and domain-agnostic effectiveness of the MALL on six different adverse weather conditions: night, overcast, cloudy, snow, fog, and rain.
+
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/MALL.png">
+</p>
+</details>
 
 ---
 
 ### `SR-TTT` [Lyu et al., **IEEE TMI 2022**]  
 **Learning from synthetic CT images via test-time training for liver tumor segmentation**  
 [📄 PDF](https://ieeexplore.ieee.org/abstract/document/9754550/) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=13052647575651297623&hl=en) | [💻 Code](https://github.com/FeiLyu/SR-TTT)
+<details>
+  
+ <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+#### 🧠 Abstract
+Automatic liver tumor segmentation could assist radiologists in diagnosis, and deep learning methods have significantly improved performance. However, these methods rely on large-scale well-annotated training datasets, which are costly to obtain. Learning from synthetic data is a promising solution, where synthetic tumors are injected into healthy images to form training pairs. Directly applying models trained on synthetic data to real images suffers from domain shift. We propose Synthetic-to-Real Test-Time Training (SR-TTT) to reduce this domain gap. SR-TTT introduces a self-supervised auxiliary task, two-step reconstruction, linking the main segmentation output to improve learning. A scheduled mixture strategy is designed to prevent error accumulation during training. At test time, the model adapts to each test image using the auxiliary task's self-supervision to enhance inference. Evaluations on two public liver tumor segmentation datasets show SR-TTT effectively mitigates synthetic-to-real domain shift and outperforms state-of-the-art methods.
 
+#### 🎯 Contributions
+- We propose SR-TTT, a novel approach for learning from synthetic images in liver tumor segmentation, effectively reducing domain gap between synthetic training and real test images.  
+- We adapt the segmentation model to each test sample with self-supervision from an auxiliary two-step reconstruction task and design a scheduled mixture strategy to ease training.  
+- Experiments on two liver tumor segmentation datasets demonstrate consistent performance improvements, validating the method's effectiveness.
+
+#### 📂 Datasets
+- Medical Segmentation Decathlon Task08 (MSD08): Contains portal venous phase CT volumes with various liver tumors, with 161 volumes for training and 142 for testing. Only healthy liver slices without tumors (4,990 images) are used for training.  
+- Liver Tumor Segmentation Benchmark (LiTS): Contains 201 contrast-enhanced CT volumes from multiple clinics, with 131 volumes for training and 70 for testing. Training uses 11,841 healthy liver slices.
+
+#### 🖼️ Method Overview
+<p align="center">
+   <img src="images/TTIA/SRTTT.png">
+</p
+     <img src="images/TTIA/SRTTT1.png">
+</p>
+   <img src="images/TTIA/SRTTT2.png">
+</p>
+   <img src="images/TTIA/SRTTT3.png">
+</p>
+</details>
+ 
 ---
 
 ### `Slot-TTA` [Prabhudesai et al., **Proc. ICML 2023**]  
 **Test-time adaptation with slot-centric models**  
 [📄 PDF](https://openreview.net/forum?id=b8F8xz6_DuX) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=14308566097544119245&hl=en) | [💻 Code](https://github.com/mihirp1998/Slot-TTA)
+<details>
+  <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+#### 🧠 Abstract
+We consider the problem of segmenting scenes into constituent objects. Current supervised visual detectors, though effective within their training distribution, often fail to segment out-of-distribution scenes. Recent test-time adaptation methods using auxiliary self-supervised losses have shown promise in image classification for generalization beyond training domains. However, we find these losses insufficient for instance segmentation without architectural inductive biases. Slot-centric generative models for image segmentation segment scenes into entities in a self-supervised way via pixel reconstruction. Building on these, we propose Slot-TTA, a semi-supervised instance segmentation model with a slot-centric image rendering component, adapted per scene at test time by gradient descent on reconstruction or novel view synthesis objectives. Test-time adaptation significantly improves segmentation in out-of-distribution scenes. Evaluations on scene segmentation benchmarks demonstrate substantial improvements over state-of-the-art supervised detectors and self-supervised domain adaptation models. Full paper: https://arxiv.org/abs/2203.11194
+
+#### 🎯 Contributions
+- We propose Slot-centric Test-time Adaptation (Slot-TTA), a semi-supervised method combining Slot Attention [28] (2D images) or Object Scene Representation Transformer [34] (multi-view) with supervised segmentation loss to leverage instance-level information.  
+- Slot-TTA is jointly trained for scene synthesis and segmentation, adapting at test time without supervision by optimizing self-supervised objectives on single samples.  
+- Unlike fully-unsupervised object-centric generative models, Slot-TTA uses annotations at training to learn object notions, scaling to complex visuals.  
+- Unlike existing test-time adaptation methods, Slot-TTA’s slot-centric architecture and self-supervised synthesis loss better align with segmentation tasks.  
+- Compared to state-of-the-art detectors, Slot-TTA uses reconstruction feedback for unsupervised test-time adaptation, enabling parsing of unfamiliar scenes with familiar entities.
+
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/SLTTA.png">
+</p>
+</details>
 
 ---
 
 ### `DIGA` [Wang et al., **Proc. CVPR 2023**]  
 **Dynamically instance-guided adaptation: A backward-free approach for test-time domain adaptive semantic segmentation**  
 [📄 PDF](https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Dynamically_Instance-Guided_Adaptation_A_Backward-Free_Approach_for_Test-Time_Domain_Adaptive_CVPR_2023_paper.html) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=5310249894401773826&hl=en) | [💻 Code](https://github.com/Waybaba/DIGA)
+<details>
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+#### 🧠 Abstract
+In this paper, we study the application of Test-time Domain Adaptation in semantic segmentation (TTDA-Seg), where both efficiency and effectiveness are crucial. Existing methods either suffer from low efficiency (e.g., backward optimization) or ignore semantic adaptation (e.g., distribution alignment), and are prone to error accumulation caused by unstable optimization and abnormal distributions. To address these issues, we propose a novel backward-free approach called Dynamically Instance-Guided Adaptation (DIGA). DIGA dynamically guides each instance's adaptation in a non-parametric manner, avoiding error accumulation and high computational costs. It consists of two modules: a distribution adaptation module (DAM) that mixes the instance and source BatchNorm statistics to promote robust representation, and a semantic adaptation module (SAM) that combines historical prototypes with instance-level prototypes to refine semantic predictions. Extensive experiments on five target domains demonstrate DIGA’s superior effectiveness and efficiency, establishing new state-of-the-art performance for TTDA-Seg. Source code: https://github.com/Waybaba/DIGA
+
+#### 🎯 Contributions
+- Efficiency: We propose a backward-free TTDA-Seg method, implemented with only one forward pass and minimal computational cost.
+- Effectiveness: Our approach jointly adapts the model’s distribution and semantic aspects, leveraging the mutual benefits of two types of classifiers for improved results.
+- Usability: DIGA is easy to implement and model-agnostic, allowing seamless integration into existing segmentation models (see Fig. 2).
+- Promising Results: We evaluate on three source domains and five target domains from driving benchmarks, achieving new state-of-the-art performance. We also demonstrate DIGA’s superiority in continual TTDA-Seg.
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/DIGA.png" >
+</p>
+  <img src="images/TTIA/DIGA1.png" >
+</p>
+  <img src="images/TTIA/DIGA2.png" >
+</p>
+  <img src="images/TTIA/DIGA3.png" >
+</p>
+</details>
 
 ---
 
 ### `CMA` [Bruggemann et al., **Proc. ICCV 2023**]  
 **Contrastive model adaptation for cross-condition robustness in semantic segmentation**  
 [📄 PDF](http://openaccess.thecvf.com/content/ICCV2023/html/Bruggemann_Contrastive_Model_Adaptation_for_Cross-Condition_Robustness_in_Semantic_Segmentation_ICCV_2023_paper.html) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=11262078686777334014&hl=en) | [💻 Code](https://github.com/brdav/cma)
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+
+#### 🧠 Abstract
+Standard unsupervised domain adaptation methods adapt models from a source to a target domain using labeled source data and unlabeled target data jointly. In model adaptation, on the other hand, access to the labeled source data is prohibited, i.e., only the source-trained model and unlabeled target data are available. We investigate normal-to-adverse condition model adaptation for semantic segmentation, whereby image-level correspondences are available in the target domain. The target set consists of unlabeled pairs of adverse- and normal-condition street images taken at GNSS-matched locations. Our method—CMA—leverages such image pairs to learn condition-invariant features via contrastive learning. In particular, CMA encourages features in the embedding space to be grouped according to their condition-invariant semantic content and not according to the condition under which respective inputs are captured. To obtain accurate cross-domain semantic correspondences, we warp the normal image to the viewpoint of the adverse image and leverage warp-confidence scores to create robust, aggregated features. With this approach, we achieve state-of-the-art semantic segmentation performance for model adaptation on several normal-to-adverse adaptation benchmarks, such as ACDC and DarkZurich. We also evaluate CMA on a newly procured adverse-condition generalization benchmark and report favorable results compared to standard unsupervised domain adaptation methods, despite the comparative handicap of CMA due to source data inaccessibility. Code is available at: https://github.com/brdav/cma
+
+#### 🎯 Contributions
+Our proposed method, named Contrastive Model Adaptation (CMA), leverages the reference predictions through a unified embedding space. Assuming the reference and target images are sufficiently aligned, co-located features should be similar between the two—neglecting dynamic objects and slight shifts in static content (e.g., missing leaves on a tree). Accordingly, we posit that for a given target feature, its reference feature at the same spatial location should be closer in the embedding space than most other target features. An embedding space fulfilling this assumption would effectively eliminate condition-specific information, but simultaneously preserve semantic content. We aim to create such an embedding space through contrastive learning, where dense spatial embeddings of the target image serve as anchors (black patch in Fig. 1). Each anchor is pulled towards a single positive, i.e., the embedding of the reference image corresponding to the same location (green patch in Fig. 1). Since the pre-trained source model is expected to produce semantic features of higher quality on the reference images than on the target images (for a qualitative comparison see Sec. E of the suppl. material), this clustering step helps to correct less reliable anchor semantics. Conversely, the anchor is pushed apart from the negatives, which are simply target embeddings at other spatial locations (or from other target images, red patches in Fig. 1), to counteract mode collapse. Through spatial alignment of the reference and target images and custom, confidence-modulated feature aggregation, we create robust embeddings for optimization with our cross-domain contrastive loss. CMA yields state-of-the-art results for model adaptation on several normal-to-adverse semantic segmentation benchmarks. It even outperforms recent standard UDA methods on these benchmarks, despite its data handicap compared to the latter methods. Attesting to our successful cross-domain embedding alignment, CMA delivers exceptionally robust results, as shown by evaluations on the newly compiled Adverse-Condition Generalization (ACG) benchmark.
+
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/CMA.png" >
+</p>
+  <img src="images/TTIA/CMA1.png" >
+</p>
+</details>
+
 
 ---
 
 ### `RNA` [Dumpala et al., **Proc. ICCV 2023**]  
 **Rapid network adaptation: Learning to adapt neural networks using test-time feedback**  
 [📄 PDF](https://openaccess.thecvf.com/content/ICCV2023/html/Yeo_Rapid_Network_Adaptation_Learning_to_Adapt_Neural_Networks_Using_Test-Time_ICCV_2023_paper.html) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=3949626307376398237&hl=en)
+<details>
+ <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+
+#### 🧠 Abstract
+We propose a method for adapting neural networks to distribution shifts at test-time. In contrast to training-time robustness mechanisms that attempt to anticipate and counter the shift, we create a closed-loop system and make use of test-time feedback signal to adapt a network on the fly. We show that this loop can be effectively implemented using a learning-based function, which realizes an amortized optimizer for the network. This leads to an adaptation method, named Rapid Network Adaptation (RNA), that is notably more flexible and orders of magnitude faster than the baselines. Through a broad set of experiments using various adaptation signals and target tasks, we study the generality, efficiency, and flexibility of this method. We perform the evaluations using various datasets (Taskonomy, Replica, ScanNet, Hypersim, COCO, ImageNet), tasks (depth, optical flow, semantic segmentation, classification), and distribution shifts (Cross-datasets, 2D and 3D Common Corruptions) with promising results.
+
+
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/RNA.png" >
+</p>
+  <img src="images/TTIA/RNA1.png" >
+</p>
+</details>
+
 
 ---
 
 ### `Decorruptor` [Oh et al., **Proc. ECCV 2024**]  
 **Efficient diffusion-driven corruption editor for test-time adaptation**  
 [📄 PDF](https://arxiv.org/abs/2403.10911) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=10378300351599346301&hl=en) | [💻 Code](https://github.com/oyt9306/Decorruptor)
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+
+#### 🧠 Abstract
+Test-time adaptation (TTA) addresses the unforeseen distribution shifts occurring during test time. In TTA, performance, memory consumption, and time consumption are crucial considerations. A recent diffusion-based TTA approach for restoring corrupted images involves image-level updates. However, using pixel space diffusion significantly increases resource requirements compared to conventional model updating TTA approaches, revealing limitations as a TTA method. To address this, we propose a novel TTA method that leverages an image editing model based on a latent diffusion model (LDM) and fine-tunes it using our newly introduced corruption modeling scheme. This scheme enhances the robustness of the diffusion model against distribution shifts by creating (clean, corrupted) image pairs and fine-tuning the model to edit corrupted images into clean ones. Moreover, we introduce a distilled variant to accelerate the model for corruption editing using only 4 network function evaluations (NFEs). We extensively validated our method across various architectures and datasets including image and video domains. Our model achieves the best performance with a 100 times faster runtime than that of a diffusion-based baseline. Furthermore, it is three times faster than the previous model updating TTA method that utilizes data augmentation, making an image-level updating approach more feasible.
+
+#### 🎯 Contributions
+– We propose Decorruptor-DPM that enhances the robustness and efficiency of diffusion-based input updating approach for TTA through the incorporation of a novel corruption modeling scheme within the LDM. – We propose Decorruptor
+-CM, as an accelerated model, by distilling the DPM to significantly reduce inference time with minimal performance degradation. By ensembling multiple edited images’ predictions, Decorruptor-CM even achieves higher classification accuracy than Decorruptor-DPM while being faster in execution. 
+– We demonstrate high performance and generalization capabilities with a faster runtime through extensive experiments on image and video TTA. Decorruptor-CM shows three times faster runtime than MEMO, making an input updating approach more practical.
+
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/DEC.png" >
+</p>
+  <img src="images/TTIA/DEC1.png" >
+</p>
+</details>
 
 ---
 
 ### `GenSAM` [Hu et al., **Proc. AAAI 2024**]  
 **Relax image-specific prompt requirement in SAM: A single generic prompt for segmenting camouflaged objects**  
 [📄 PDF](https://arxiv.org/abs/2312.07374) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=3602234802657076128&hl=en) | [💻 Code](https://github.com/jyLin8100/GenSAM)
+<details>
+ <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
 
+#### 🧠 Abstract
+Camouflaged object detection (COD) approaches heavily rely on pixel-level annotated datasets. Weakly-supervised COD (WSCOD) approaches use sparse annotations like scribbles or points to reduce annotation efforts, but this can lead to decreased accuracy. The Segment Anything Model (SAM) shows remarkable segmentation ability with sparse prompts like points. However, manual prompt is not always feasible, as it may not be accessible in real-world application. Additionally, it only provides localization information instead of semantic one, which can intrinsically cause ambiguity in interpreting targets. In this work, we aim to eliminate the need for manual prompt. The key idea is to employ Cross-modal Chains of Thought Prompting (CCTP) to reason visual prompts using the semantic information given by a generic text prompt. To that end, we introduce a test-time instance-wise adaptation mechanism called Generalizable SAM (GenSAM) to automatically generate and optimize visual prompts from the generic task prompt for WSCOD. In particular, CCTP maps a single generic text prompt onto image-specific consensus foreground and background heatmaps using vision-language models, acquiring reliable visual prompts. Moreover, to test-time adapt the visual prompts, we further propose Progressive Mask Generation (PMG) to iteratively reweight the input image, guiding the model to focus on the targeted region in a coarse-to-fine manner. Crucially, all network parameters are fixed, avoiding the need for additional training. Experiments on three benchmarks demonstrate that GenSAM outperforms point supervision approaches and achieves comparable results to scribble supervision ones, solely relying on general task descriptions.
+
+#### 🎯 Contributions
+(1) To eliminate the need for specific annotations tailored to each image in WSCOD, our GenSAM approach automatically generates personalized prompts for multiple unlabeled images using only a general task description.   
+(2) To convert task descriptions into precise visual prompts, we introduce an Cross-modal Chains of Thought Prompting module. It uses a consensus mechanism and a novel self-attention to derive image-specific prompts for SAM. Additionally, Progressive Mask Generation module utilizes the consensus heatmap as a visual prompt, progressively enhancing the segmentation performance.   
+(3) Extensive experiments on three benchmarks have demonstrated the effectiveness of our proposed GenSAM.
+
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/GenSAM.png" >
+</p>
+
+</details>
+ 
 ---
 
 ### `TTT4AS` [Costanzino et al., **Proc. CVPR Workshops 2024**]  
 **Test time training for industrial anomaly segmentation**  
 [📄 PDF](https://arxiv.org/abs/2404.03743) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=13668953966639046509&hl=en)
+<details>
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
 
+#### 🧠 Abstract
+Anomaly Detection and Segmentation (AD&S) is crucial for industrial quality control. While existing methods excel in generating anomaly scores for each pixel, practical applications require producing a binary segmentation to identify anomalies. Due to the absence of labeled anomalies in many real scenarios, standard practices binarize these maps based on some statistics derived from a validation set containing only nominal samples, resulting in poor segmentation performance. This paper addresses this problem by proposing a test time training strategy to improve the segmentation performance. Indeed, at test time, we can extract rich features directly from anomalous samples to train a classifier that can discriminate defects effectively. Our general approach can work downstream to any AD&S method that provides an anomaly score map as output, even in multimodal settings. We demonstrate the effectiveness of our approach over baselines through extensive experimentation and evaluation on MVTec AD and MVTec 3D-AD.
+
+#### 🎯 Contributions
+• For the first time, we investigate the TTT in AD&S.   
+• We present a novel method, TTT4AS, for refining segmentation maps given an anomaly score generated by a generic AD&S algorithm and features extracted by a general-purpose pre-trained network;   
+• Our method enhances binary anomaly segmentation performance across various RGB or multimodal AD&S approaches. Moreover, our approach circumvents the need for selecting a specific threshold to binarize anomaly scores.  
+
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/TTT4AS.png" >
+</p>
+
+</details>
+  
 ---
 
 ### `SaLIP` [Aleem et al., **Proc. CVPR Workshops 2024**]  
 **Test-time adaptation with SaLIP: A cascade of SAM and CLIP for zero-shot medical image segmentation**  
 [📄 PDF](https://arxiv.org/abs/2404.06362) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=2076060907669377814&hl=en) | [💻 Code](https://github.com/aleemsidra/SaLIP)
+<details>
+
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+
+#### 🧠 Abstract
+The Segment Anything Model (SAM) and CLIP are remarkable vision foundation models (VFMs). SAM, a prompt-driven segmentation model, excels in segmentation tasks across diverse domains, while CLIP is renowned for its zero-shot recognition capabilities. However, their unified potential has not yet been explored in medical image segmentation. To adapt SAM to medical imaging, existing methods primarily rely on tuning strategies that require extensive data or prior prompts tailored to the specific task, making it particularly challenging when only a limited number of data samples are available. This work presents an in-depth exploration of integrating SAM and CLIP into a unified framework for medical image segmentation. Specifically, we propose a simple unified framework, SaLIP, for organ segmentation. Initially, SAM is used for part-based segmentation within the image, followed by CLIP to retrieve the mask corresponding to the region of interest (ROI) from the pool of SAM’s generated masks. Finally, SAM is prompted by the retrieved ROI to segment a specific organ. Thus, SaLIP is training/fine-tuning free and does not rely on domain expertise or labeled data for prompt engineering. Our method shows substantial enhancements in zero-shot segmentation, showcasing notable improvements in DICE scores across diverse segmentation tasks like brain (63.46%), lung (50.11%), and fetal head (30.82%), when compared to un-prompted SAM. Code and text prompts are available at SaLIP.
+
+#### 🎯 Contributions
+• We propose a simple unified framework that leverages the combined capabilities of SAM and CLIP for medical image segmentation. We demonstrate that a cascade of these foundation models can improve the zero-shot segmentation accuracy in medical imaging.   
+• To effectively address the challenges associated with applying SAM directly to medical imaging and to optimize its utilization for medical image segmentation, we propose employing both segment everything and promptable segmentation modes. To the best of our knowledge, we are the first to investigate the utilization of SAM’s dual modes for zero-shot medical imaging segmentation.    
+• Our unified framework SaLIP is adapted fully at test-time for zero-shot medical image segmentation, thereby efficiently alleviating the training costs associated with these foundation models. By leveraging Large language models (LLMs), our method eliminates the need for domain expertise in prompt engineering.
+
+#### 📂 Datasets
+<p>We assessed our method across three diverse medical imaging modalities.  
+  The Calgary-Campinas (CC359) dataset is a multi-vendor, multifield strength magnetic resonance brain imaging dataset with 359 volumes for skull stripping.  
+  The HC18 dataset contains 2D fetal head ultrasound images with expert annotations; 200 images are selected for testing. The X-ray Masks and Labels dataset consists of 800 2D chest X-ray images with corresponding lung segmentation masks.</p><br>
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/SaLIP.png" >
+</p>
+</details>
 
 ---
 
 ### `Quest4Clone` [Basak and Yin, **Proc. MICCAI 2024**]  
 **Quest for clone: Test-time domain adaptation for medical image segmentation by searching the closest clone in latent space**  
 [📄 PDF](https://papers.miccai.org/miccai-2024/paper/0297_paper.pdf) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=14583918377987812853&hl=en) | [💻 Code](https://github.com/hritam-98/Quest4Clone)
+<details>
+<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
 
+#### 🧠 Abstract
+Unsupervised Domain Adaptation (UDA) aims to align labeled source distribution and unlabeled target distribution by mining domain-agnostic feature representation. However, adapting the source-trained model for new target domains after the model is deployed to users poses a significant challenge. To address this, we propose a generative latent search paradigm to reconstruct the closest clone of every target image from the source latent space. This involves utilizing a test-time adaptation (TTA) strategy, wherein a latent optimization step finds the closest clone of each target image from the source representation space using variational sampling of source latent distribution. Thus, our method facilitates domain adaptation without requiring target-domain supervision during training. Moreover, we demonstrate that our approach can be further fine-tuned using a few labeled target data without the need for unlabeled target data, by leveraging global and local label guidance from available target annotations to enhance the downstream segmentation task. We empirically validate the efficacy of our proposed method, surpassing existing UDA, TTA, and SSDA methods in two domain adaptive image segmentation tasks. Code is available at GitHub.
+
+#### 🎯 Contributions
+(1) **New TTA Paradigm**: We present a DA paradigm that circumvents the conventional reliance on target data, paving the way for more efficient and resource-conservative test-time adaptation.  
+(2) **Enhanced Source-like Target Clone**: Our approach precisely maps every target image to its closest clone within the source latent space by a latent optimization strategy. By finding the clone of every target image from the source latent space, we introduce an effective way of adapting to new target domains, resulting in superior performance.  
+(3) **Scalability to SSDA−**: We further introduce global and local semantic guidance in a new SSDA− setting to explore beyond TTA’s adaptation ability. Different from the traditional SSDA that uses labeled source (SL), both labeled (TL) and unlabeled (TU) target data, our SSDA− only uses SL and TL, greatly reducing the training data acquisition effort in new target domains. Upon evaluation, our proposed method performs superior on multi-organ and multi-modal benchmark datasets, compared to existing UDA, TTA, and SSDA works.
+
+#### 📂 Datasets
+We evaluate our method on two widely-used domain-adaptive medical image segmentation benchmarks: 
+(1) **Cardiac structure segmentation** from the Multi-Modality Whole Heart Segmentation (MMWHS) Challenge dataset, which includes 20 unpaired CT and 20 MRI volumes. Four anatomical classes are used: Left Ventricle (LV), Left Atrium (LA), Myocardium (MYO), and Ascending Aorta (AA).   
+(2) **Brain tumor segmentation** in MRI from the BraTS2018 dataset, with 285 patient volumes across four modalities: T1CE, T1, T2, and FLAIR.  
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/Quest4Clone.png" >
+</p>
+</details>
 ---
 
 ### `Seg-TTO` [Silva et al., **arXiv 2025**]  
 **Test-time optimization for domain adaptive open vocabulary segmentation**  
 [📄 PDF](https://arxiv.org/abs/2501.04696) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=11664277597711483004&hl=en)
+<details>
+#### 🧠 Abstract
+We present Seg-TTO, a novel framework for zero-shot, open-vocabulary semantic segmentation (OVSS), designed to excel in specialized domain tasks. While current open vocabulary approaches show impressive performance on standard segmentation benchmarks under zero-shot settings, they fall short of supervised counterparts on highly domain-specific datasets. We focus on segmentation-specific test-time optimization to address this gap. Segmentation requires an understanding of multiple concepts within a single image while retaining the locality and spatial structure of representations. We propose a novel self-supervised objective adhering to these requirements and use it to align the model parameters with input images at test time. In the textual modality, we learn multiple embeddings for each category to capture diverse concepts within an image, while in the visual modality, we calculate pixel-level losses followed by embedding aggregation operations specific to preserving spatial structure. Our resulting framework termed Seg-TTO is a plug-and-play module. We integrate Seg-TTO with three state-of-the-art OVSS approaches and evaluate across 22 challenging OVSS tasks covering a range of specialized domains. Our Seg-TTO demonstrates clear performance improvements (up to 27% mIoU increase on some datasets) establishing new state-of-the-art. Our code and models will be released publicly.
 
+
+#### 🎯 Contributions
+• First test-time optimization framework for OVSS operating zero-shot on specialized-domain tasks.  
+• Novel prompt tuning strategy with losses suitable for dense tasks such as semantic segmentation.  
+• Automated visual attribute generation and feature selection techniques tailored for segmentation tasks.
+
+#### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/SegTTO.png" >
+</p>
+</details>
 ---
 
 ### `INT` [Hu et al., **arXiv 2025**]  
 **INT: Instance-specific negative mining for task-generic promptable segmentation**  
 [📄 PDF](https://arxiv.org/abs/2501.18753) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=18003844780246240761&hl=en)
+<details>
+<summary>📌 Abstract · Contributions</summary>  
+#### 🧠 Abstract  
+Task-generic promptable image segmentation aims to achieve segmentation of diverse samples under a single task description by utilizing only one task-generic prompt. Current methods leverage the generalization capabilities of Vision-Language Models (VLMs) to infer instance-specific prompts from these task-generic prompts in order to guide the segmentation process. However, when VLMs struggle to generalise to some image instances, predicting instance-specific prompts becomes poor. To solve this problem, we introduce Instance-specific Negative Mining for Task-Generic Promptable Segmentation (INT). The key idea of INT is to adaptively reduce the influence of irrelevant (negative) prior knowledge whilst to increase the use the most plausible prior knowledge, selected by negative mining with higher contrast, in order to optimise instance-specific prompts generation. Specifically, INT consists of two components: (1) instance-specific prompt generation, which progressively filters out incorrect information in prompt generation; (2) semantic mask generation, which ensures each image instance segmentation matches correctly the semantics of the instance-specific prompts. INT is validated on six datasets, including camouflaged objects and medical images, demonstrating its effectiveness, robustness and scalability.
 
+#### 🎯 Contributions  
+(1). We introduce INT, a training-free test-time adaptation approach that uses progressive negative mining to identify more accurate instance-specific prompts in the absence of annotations, enabling task-generic promptable segmentations to be more accurate.   
+(2). Progressive negative mining identifies hard-to-distinguish error categories by cumulatively multiplying the changes in VLM outputs before and after mask-ing across multiple iterations by category, thereby ensuring the accuracy of the generated instance-specific prompts.   
+(3). Experiments on six datasets demonstrate the effectiveness of our method.
+
+  #### 🖼️ Method Overview
+<p align="center">
+  <img src="images/TTIA/INT.png" >
+</p>
+</details>
 ---
 
 
