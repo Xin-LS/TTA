@@ -821,6 +821,7 @@ We evaluate our method on two widely-used domain-adaptive medical image segmenta
   <img src="images/TTIA/Quest4Clone.png" >
 </p>
 </details>
+
 ---
 
 ### `Seg-TTO` [Silva et al., **arXiv 2025**]  
@@ -843,6 +844,7 @@ We present Seg-TTO, a novel framework for zero-shot, open-vocabulary semantic se
   <img src="images/TTIA/SegTTO.png" >
 </p>
 </details>
+
 ---
 
 ### `INT` [Hu et al., **arXiv 2025**]  
@@ -864,6 +866,7 @@ Task-generic promptable image segmentation aims to achieve segmentation of diver
   <img src="images/TTIA/INT.png" >
 </p>
 </details>
+
 ---
 
 
