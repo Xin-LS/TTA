@@ -320,6 +320,7 @@ This paper addresses the prevalent issue of label shift in an online setting wit
 ### `DCAC` [Hu et al., **IEEE TMI 2022**]  
 Domain and content adaptive convolution based multi-source domain generalization in medical image segmentation 
 [📄 PDF](https://arxiv.org/abs/2109.05676) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=7895018487155935722&hl=en) | [💻 Code](https://github.com/ShishuaiHu/DCAC/)
+
 ---
 
 ### `InstCal` [Zou et al., **Proc. ECCV 2022**]  
@@ -349,54 +350,65 @@ Domain and content adaptive convolution based multi-source domain generalization
 ### `Slot-TTA` [Prabhudesai et al., **Proc. ICML 2023**]  
 **Test-time adaptation with slot-centric models**  
 [📄 PDF](https://openreview.net/forum?id=b8F8xz6_DuX) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=14308566097544119245&hl=en) | [💻 Code](https://github.com/mihirp1998/Slot-TTA)
+
 ---
 
 ### `DIGA` [Wang et al., **Proc. CVPR 2023**]  
 **Dynamically instance-guided adaptation: A backward-free approach for test-time domain adaptive semantic segmentation**  
 [📄 PDF](https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Dynamically_Instance-Guided_Adaptation_A_Backward-Free_Approach_for_Test-Time_Domain_Adaptive_CVPR_2023_paper.html) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=5310249894401773826&hl=en) | [💻 Code](https://github.com/Waybaba/DIGA)
+
 ---
 
 ### `CMA` [Bruggemann et al., **Proc. ICCV 2023**]  
 **Contrastive model adaptation for cross-condition robustness in semantic segmentation**  
 [📄 PDF](http://openaccess.thecvf.com/content/ICCV2023/html/Bruggemann_Contrastive_Model_Adaptation_for_Cross-Condition_Robustness_in_Semantic_Segmentation_ICCV_2023_paper.html) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=11262078686777334014&hl=en) | [💻 Code](https://github.com/brdav/cma)
+
 ---
 
 ### `RNA` [Dumpala et al., **Proc. ICCV 2023**]  
 **Rapid network adaptation: Learning to adapt neural networks using test-time feedback**  
 [📄 PDF](https://openaccess.thecvf.com/content/ICCV2023/html/Yeo_Rapid_Network_Adaptation_Learning_to_Adapt_Neural_Networks_Using_Test-Time_ICCV_2023_paper.html) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=3949626307376398237&hl=en)
+
 ---
 
 ### `Decorruptor` [Oh et al., **Proc. ECCV 2024**]  
 **Efficient diffusion-driven corruption editor for test-time adaptation**  
 [📄 PDF](https://arxiv.org/abs/2403.10911) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=10378300351599346301&hl=en) | [💻 Code](https://github.com/oyt9306/Decorruptor)
+
 ---
 
 ### `GenSAM` [Hu et al., **Proc. AAAI 2024**]  
 **Relax image-specific prompt requirement in SAM: A single generic prompt for segmenting camouflaged objects**  
 [📄 PDF](https://arxiv.org/abs/2312.07374) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=3602234802657076128&hl=en) | [💻 Code](https://github.com/jyLin8100/GenSAM)
+
 ---
 
 ### `TTT4AS` [Costanzino et al., **Proc. CVPR Workshops 2024**]  
 **Test time training for industrial anomaly segmentation**  
 [📄 PDF](https://arxiv.org/abs/2404.03743) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=13668953966639046509&hl=en)
+
 ---
 
 ### `SaLIP` [Aleem et al., **Proc. CVPR Workshops 2024**]  
 **Test-time adaptation with SaLIP: A cascade of SAM and CLIP for zero-shot medical image segmentation**  
 [📄 PDF](https://arxiv.org/abs/2404.06362) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=2076060907669377814&hl=en) | [💻 Code](https://github.com/aleemsidra/SaLIP)
+
 ---
 
 ### `Quest4Clone` [Basak and Yin, **Proc. MICCAI 2024**]  
 **Quest for clone: Test-time domain adaptation for medical image segmentation by searching the closest clone in latent space**  
 [📄 PDF](https://papers.miccai.org/miccai-2024/paper/0297_paper.pdf) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=14583918377987812853&hl=en) | [💻 Code](https://github.com/hritam-98/Quest4Clone)
+
 ---
 
 ### `Seg-TTO` [Silva et al., **arXiv 2025**]  
 **Test-time optimization for domain adaptive open vocabulary segmentation**  
 [📄 PDF](https://arxiv.org/abs/2501.04696) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=11664277597711483004&hl=en)
+
 ---
 
 ### `INT` [Hu et al., **arXiv 2025**]  
 **INT: Instance-specific negative mining for task-generic promptable segmentation**  
 [📄 PDF](https://arxiv.org/abs/2501.18753) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=18003844780246240761&hl=en)
+
 ---
