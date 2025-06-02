@@ -516,7 +516,8 @@ We propose a test-time adaptation method for cross-domain image segmentation. Ou
 ### `TASD` [Liu et al., **Proc. AAAI 2022**]  
 **Single-domain generalization in medical image segmentation via test-time adaptation from shape dictionary**  
 [📄 PDF](https://arxiv.org/abs/2206.14467) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=5193566977778450536&hl=en)
-</details>
+
+<details>
 <summary>📌 Abstract · Contributions · Datasets & Methods</summary>
 
 #### 🧠 Abstract
