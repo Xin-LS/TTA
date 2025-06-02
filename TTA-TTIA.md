@@ -653,7 +653,8 @@ In this paper, we study the application of Test-time Domain Adaptation in semant
 ### `CMA` [Bruggemann et al., **Proc. ICCV 2023**]  
 **Contrastive model adaptation for cross-condition robustness in semantic segmentation**  
 [📄 PDF](http://openaccess.thecvf.com/content/ICCV2023/html/Bruggemann_Contrastive_Model_Adaptation_for_Cross-Condition_Robustness_in_Semantic_Segmentation_ICCV_2023_paper.html) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=11262078686777334014&hl=en) | [💻 Code](https://github.com/brdav/cma)
-<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
+<details>
+<summary>📌 Abstract · Contributions</summary>  
 
 #### 🧠 Abstract
 Standard unsupervised domain adaptation methods adapt models from a source to a target domain using labeled source data and unlabeled target data jointly. In model adaptation, on the other hand, access to the labeled source data is prohibited, i.e., only the source-trained model and unlabeled target data are available. We investigate normal-to-adverse condition model adaptation for semantic segmentation, whereby image-level correspondences are available in the target domain. The target set consists of unlabeled pairs of adverse- and normal-condition street images taken at GNSS-matched locations. Our method—CMA—leverages such image pairs to learn condition-invariant features via contrastive learning. In particular, CMA encourages features in the embedding space to be grouped according to their condition-invariant semantic content and not according to the condition under which respective inputs are captured. To obtain accurate cross-domain semantic correspondences, we warp the normal image to the viewpoint of the adverse image and leverage warp-confidence scores to create robust, aggregated features. With this approach, we achieve state-of-the-art semantic segmentation performance for model adaptation on several normal-to-adverse adaptation benchmarks, such as ACDC and DarkZurich. We also evaluate CMA on a newly procured adverse-condition generalization benchmark and report favorable results compared to standard unsupervised domain adaptation methods, despite the comparative handicap of CMA due to source data inaccessibility. Code is available at: https://github.com/brdav/cma
@@ -698,8 +699,8 @@ We propose a method for adapting neural networks to distribution shifts at test-
 ### `Decorruptor` [Oh et al., **Proc. ECCV 2024**]  
 **Efficient diffusion-driven corruption editor for test-time adaptation**  
 [📄 PDF](https://arxiv.org/abs/2403.10911) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=10378300351599346301&hl=en) | [💻 Code](https://github.com/oyt9306/Decorruptor)
-<summary>📌 Abstract · Contributions · Datasets & Methods</summary>
-
+<details>
+<summary>📌 Abstract · Contributions</summary>  
 #### 🧠 Abstract
 Test-time adaptation (TTA) addresses the unforeseen distribution shifts occurring during test time. In TTA, performance, memory consumption, and time consumption are crucial considerations. A recent diffusion-based TTA approach for restoring corrupted images involves image-level updates. However, using pixel space diffusion significantly increases resource requirements compared to conventional model updating TTA approaches, revealing limitations as a TTA method. To address this, we propose a novel TTA method that leverages an image editing model based on a latent diffusion model (LDM) and fine-tunes it using our newly introduced corruption modeling scheme. This scheme enhances the robustness of the diffusion model against distribution shifts by creating (clean, corrupted) image pairs and fine-tuning the model to edit corrupted images into clean ones. Moreover, we introduce a distilled variant to accelerate the model for corruption editing using only 4 network function evaluations (NFEs). We extensively validated our method across various architectures and datasets including image and video domains. Our model achieves the best performance with a 100 times faster runtime than that of a diffusion-based baseline. Furthermore, it is three times faster than the previous model updating TTA method that utilizes data augmentation, making an image-level updating approach more feasible.
 
@@ -825,7 +826,8 @@ We evaluate our method on two widely-used domain-adaptive medical image segmenta
 **Test-time optimization for domain adaptive open vocabulary segmentation**  
 [📄 PDF](https://arxiv.org/abs/2501.04696) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=11664277597711483004&hl=en)
 <details>
-
+<summary>📌 Abstract · Contributions</summary>  
+  
   #### 🧠 Abstract
 We present Seg-TTO, a novel framework for zero-shot, open-vocabulary semantic segmentation (OVSS), designed to excel in specialized domain tasks. While current open vocabulary approaches show impressive performance on standard segmentation benchmarks under zero-shot settings, they fall short of supervised counterparts on highly domain-specific datasets. We focus on segmentation-specific test-time optimization to address this gap. Segmentation requires an understanding of multiple concepts within a single image while retaining the locality and spatial structure of representations. We propose a novel self-supervised objective adhering to these requirements and use it to align the model parameters with input images at test time. In the textual modality, we learn multiple embeddings for each category to capture diverse concepts within an image, while in the visual modality, we calculate pixel-level losses followed by embedding aggregation operations specific to preserving spatial structure. Our resulting framework termed Seg-TTO is a plug-and-play module. We integrate Seg-TTO with three state-of-the-art OVSS approaches and evaluate across 22 challenging OVSS tasks covering a range of specialized domains. Our Seg-TTO demonstrates clear performance improvements (up to 27% mIoU increase on some datasets) establishing new state-of-the-art. Our code and models will be released publicly.
 
