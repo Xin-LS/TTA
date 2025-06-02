@@ -325,21 +325,25 @@ Domain and content adaptive convolution based multi-source domain generalization
 ### `InstCal` [Zou et al., **Proc. ECCV 2022**]  
 **Learning instance-specific adaptation for cross-domain segmentation**  
 [📄 PDF](https://link.springer.com/chapter/10.1007/978-3-031-19827-4_27) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=3479758947644774894&hl=en) | [💻 Code](https://github.com/Yuliang-Zou/InstCal-Pano)
+
 ---
 
 ### `TASD` [Liu et al., **Proc. AAAI 2022**]  
 **Single-domain generalization in medical image segmentation via test-time adaptation from shape dictionary**  
 [📄 PDF](https://arxiv.org/abs/2206.14467) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=5193566977778450536&hl=en)
+
 ---
 
 ### `MALL` [Reddy et al., **Proc. ECCV 2022**]  
 **Master of all: Simultaneous generalization of urban-scene segmentation to all adverse weather conditions**  
 [📄 PDF](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136990051.pdf) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=16396707704713565964&hl=en)
+
 ---
 
 ### `SR-TTT` [Lyu et al., **IEEE TMI 2022**]  
 **Learning from synthetic CT images via test-time training for liver tumor segmentation**  
 [📄 PDF](https://ieeexplore.ieee.org/abstract/document/9754550/) | [🔎 Google Scholar](https://scholar.google.com/scholar?cluster=13052647575651297623&hl=en) | [💻 Code](https://github.com/FeiLyu/SR-TTT)
+
 ---
 
 ### `Slot-TTA` [Prabhudesai et al., **Proc. ICML 2023**]  
